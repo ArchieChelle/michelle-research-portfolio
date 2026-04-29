@@ -21,7 +21,7 @@ Open to new opportunities and collaborations.
 - Send button (Ember fill)
 
 ## Backend
-Formspree — set up endpoint and paste into Framer form action.
+Formspree — endpoint configured in `.env` (FORMSPREE_ENDPOINT).
 
 ## Secondary path
 LinkedIn icon link only — **do not expose raw email** on the page.
@@ -30,7 +30,7 @@ LinkedIn URL: `https://linkedin.com/in/exantusmich`
 
 ---
 
-## Notes for Framer
+## Implementation notes
 
 - Form must be accessible (proper labels)
 - Success state needed: "Thanks — I'll be in touch within 48 hours."

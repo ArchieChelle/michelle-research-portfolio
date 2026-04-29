@@ -1,8 +1,8 @@
 # PRD: michelle.research — Portfolio Homepage
 **Owner:** Michelle Exantus  
-**Last Updated:** April 26, 2026  
+**Last Updated:** April 29, 2026  
 **Status:** Ready for Build  
-**Platform:** Framer + Formspree
+**Platform:** Astro + Formspree
 
 ---
 
@@ -180,9 +180,9 @@ Asymmetry balanced by consistent spacing.
 
 | Requirement | Decision |
 |---|---|
-| Build platform | Framer |
+| Build platform | Astro |
 | Form backend | Formspree |
-| CMS | Framer native CMS (project cards + writing posts) |
+| CMS | Astro content collections (project cards + writing posts) |
 | Fonts | Newsreader + IBM Plex Sans (Google Fonts) |
 | Logo carousel | CSS infinite scroll animation |
 | Motion | CSS transitions + scroll-triggered reveals; reduced-motion fallback |

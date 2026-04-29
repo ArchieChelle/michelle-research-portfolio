@@ -147,13 +147,13 @@ Finally, the next-step plan should assign owners. Product can own roadmap sequen
 
 ---
 
-## Notes for Framer (strip before publishing)
+## Implementation notes (strip before publishing)
 
-- Hero image: drag `new-playbook-mobile-roadmap.jpg` from `/assets/case-study-heroes/` into the case-study layout.
+- Hero image: place `new-playbook-mobile-roadmap.jpg` from `/assets/case-study-heroes/` in the hero slot.
 - Section dividers: use a thin Wisteria `#BEAEDB` 1px rule between major sections.
 - Outcome block quote: Newsreader italic, indented, Black Coffee `#3A2D34`.
 - Theme-to-concept table: render as a readable mapping table, not as a screenshot; use Jacarta `#3F2A52` headers and Parchment `#EEE9DF` background.
 - Kano method table: render as a rigor callout with Ember `#A35139` labels for Functional, Dysfunctional, QA, and Thresholds.
-- Prioritization matrix: build as a table component in Framer with the final Decision column highlighted in Ember `#A35139`.
+- Prioritization matrix: build as a styled table component with the final Decision column highlighted in Ember `#A35139`.
 - Study design specs: callout box with Parchment `#EEE9DF` background, Jacarta `#3F2A52` border, Black Coffee `#3A2D34` body text, and IBM Plex Sans Mono for placeholder/spec values.
 - Pull quote candidate: "The mobile roadmap did not need more ideas. It needed shared decision criteria."

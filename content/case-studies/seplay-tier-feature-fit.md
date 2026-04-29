@@ -146,9 +146,9 @@ Finally, I would separate the next research wave into two tracks: retention vali
 
 ---
 
-## Notes for Framer (strip before publishing)
+## Implementation notes (strip before publishing)
 
-- Hero image: drag `seplay-tier-feature-fit.jpg` from `/assets/case-study-heroes/` into the case-study layout.
+- Hero image: place `seplay-tier-feature-fit.jpg` from `/assets/case-study-heroes/` in the hero slot.
 - Section dividers: use a thin Wisteria `#BEAEDB` 1px rule between major sections.
 - Outcome block quote: Newsreader italic, indented, Black Coffee `#3A2D34`.
 - Evidence-boundary table: render as a compact data table with Jacarta `#3F2A52` header text and Parchment `#EEE9DF` background.

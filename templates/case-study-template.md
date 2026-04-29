@@ -1,7 +1,7 @@
 ---
 title:
 slug:
-status: draft   # draft | review | ready-for-framer | published
+status: draft   # draft | review | ready | published
 methods:        # e.g. Mixed-Methods, MaxDiff, Stakeholder Interviews
 industry:
 client:
@@ -44,7 +44,7 @@ How did you tackle it? Walk through the methods — but stay focused on **why** 
 - **Method 2** — what it was, why it fit
 - **Method 3** — what it was, why it fit
 
-If there's a process diagram or framework worth showing, note it here for Framer.
+If there's a process diagram or framework worth showing, note it here.
 
 ## Findings
 
@@ -80,9 +80,9 @@ What would you do differently? What did you learn? This is the section that sign
 
 ---
 
-## Notes for Framer (strip before publishing)
+## Implementation notes (strip before publishing)
 
-- Hero image: drag `[hero_image]` into the case-study layout
+- Hero image: place `[hero_image]` in the hero slot
 - Section dividers: thin Wisteria 1px rule
 - Block quotes: use Newsreader, italic, indented
 - Pull quotes from findings: render in Ember

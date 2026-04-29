@@ -1,6 +1,6 @@
 # Color Palette — Option B "Signature Split Grid"
 
-Quick reference. Copy hex codes directly from this file when working in Framer.
+Quick reference. Copy hex codes directly from this file when working in Astro.
 
 | Token | Hex | Role |
 |---|---|---|

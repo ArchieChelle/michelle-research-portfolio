@@ -142,13 +142,13 @@ Finally, the GameChanger paradox validated the methodological choice itself. If 
 
 ---
 
-## Notes for Framer (strip before publishing)
+## Implementation notes (strip before publishing)
 
-- Hero image: drag `smart-scaling.jpg` from `/assets/case-study-heroes/` into the layout
+- Hero image: place `smart-scaling.jpg` from `/assets/case-study-heroes/` in the hero slot
 - Section dividers: thin Wisteria `#BEAEDB` 1px rule between major sections
 - Block quotes (sample boundary note): Newsreader, italic, indented — use the pull-quote style
 - The preference share table: render as a styled data table with Ember `#A35139` on the top row (Spreadsheets)
 - The 2x2 matrix: render as a 4-cell grid component, not as a code block — Jacarta `#3F2A52` borders, labels in IBM Plex Sans 12px uppercase
 - MaxDiff design details block in Approach: render as a small callout card (Parchment `#EEE9DF` background, Black Coffee `#3A2D34` text, IBM Plex Sans Mono for the spec values)
 - Pull quote candidate for Finding 4: "Request volume reflects familiarity bias, not user value." — render in Ember, Newsreader italic, large
-- Evidence boundary note: include at the bottom of the Approach section AND as a standalone callout at the end of Findings, matching the style used in the Canva deck's new page 20
+- Evidence boundary note: include at the bottom of the Approach section AND as a standalone callout at the end of Findings

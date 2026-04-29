@@ -1,6 +1,6 @@
 # Publishing Checklist
 
-The bridge between VS Code and Framer. Run this checklist before publishing any case study or writing piece.
+Run this checklist before publishing any case study or writing piece.
 
 ---
 
@@ -27,20 +27,18 @@ The bridge between VS Code and Framer. Run this checklist before publishing any 
 
 ---
 
-## In Framer
+## In Astro
 
 ### Setup
-- [ ] Create CMS entry (or page if not using CMS)
+- [ ] Create or update the page/route in `site/src/pages/`
 - [ ] Set the slug to match the markdown frontmatter
-- [ ] Set status to `Published` (or keep as `Draft` for review first)
+- [ ] Set status to `ready` in frontmatter before build
 
 ### Content
-- [ ] Paste markdown content into Framer's CMS rich text field
-- [ ] Verify headings rendered correctly (H1, H2, H3)
+- [ ] Verify headings render correctly (H1, H2, H3)
 - [ ] Verify lists, tables, and block quotes look right
-- [ ] Upload hero image to Framer
-- [ ] Link any in-line images
-- [ ] Apply brand styles (Newsreader for headings, IBM Plex Sans for body)
+- [ ] Place hero image in the correct slot (`/assets/case-study-heroes/`)
+- [ ] Check any in-line images are linked correctly
 
 ### Layout
 - [ ] Asymmetric grid breaks render correctly
@@ -70,9 +68,9 @@ The bridge between VS Code and Framer. Run this checklist before publishing any 
 
 ## Rollback
 
-If something looks broken in Framer:
+If something looks broken:
 
 1. Don't panic
-2. In Framer, revert to the previous published version
-3. Fix in VS Code, re-paste, re-publish
-4. The markdown file is your source of truth — Framer is the renderer
+2. Revert the relevant file in git (`git checkout HEAD -- path/to/file`)
+3. Fix in VS Code, rebuild, redeploy
+4. The markdown file is your source of truth — Astro is the renderer

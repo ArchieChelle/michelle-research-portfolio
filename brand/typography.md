@@ -1,6 +1,6 @@
 # Typography
 
-Quick reference for Framer text styles.
+Quick reference for Astro text styles.
 
 ## Font families
 

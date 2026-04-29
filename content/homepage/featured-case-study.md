@@ -30,7 +30,7 @@ Narrowed 13 competing features to 5 strategic investments. Directly influenced l
 
 ---
 
-## Notes for Framer
+## Implementation notes
 
 - Asymmetric editorial block layout
 - Left column: section number + label

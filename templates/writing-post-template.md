@@ -1,7 +1,7 @@
 ---
 title:
 slug:
-status: draft   # draft | review | ready-for-framer | published
+status: draft   # draft | review | ready | published
 type: essay     # essay | reflection | tactical | case-note
 date:
 estimated_read_time:

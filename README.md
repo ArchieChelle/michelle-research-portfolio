@@ -2,20 +2,20 @@
 
 This is your VS Code workspace for the **michelle.research** portfolio.
 
-> ⚠️ This repo is **not** the live website. Framer is your build platform. This workspace is where you draft, organize, and source-control the content and assets that feed Framer.
+> This repo is the source of truth for the **michelle.research** portfolio — content, assets, brand system, and the Astro site that publishes it all.
 
 ---
 
 ## The workflow
 
 ```
-  Draft in VS Code  →  Polish as markdown  →  Copy into Framer CMS
+  Draft in VS Code  →  Polish as markdown  →  Implement in Astro  →  Deploy
 ```
 
 1. **Write** case studies, copy, and posts as `.md` files inside `/content/`
-2. **Organize** logos, photos, and visuals inside `/assets/` so you can drag them into Framer
+2. **Organize** logos, photos, and visuals inside `/assets/` so Astro components can reference them
 3. **Reference** colors, typography, and voice from `/brand/` so everything stays consistent
-4. **Publish** by copying the polished markdown content into Framer's CMS
+4. **Build** by implementing polished content into Astro pages and components inside `/site/`
 
 ---
 
@@ -23,7 +23,7 @@ This is your VS Code workspace for the **michelle.research** portfolio.
 
 - **Beginner-friendly.** It's just text with light formatting (`# Heading`, `**bold**`, `- bullet`).
 - **Live preview in VS Code.** Open any `.md` file and press `Cmd+Shift+V` (Mac) or `Ctrl+Shift+V` (Windows).
-- **Portable.** If you ever move off Framer, your writing comes with you.
+- **Portable.** Content lives in plain markdown, independent of the build tool.
 - **Easy to edit with Claude.** Paste any `.md` file into a chat and ask for feedback.
 
 ---
@@ -38,7 +38,7 @@ michelle-research-portfolio/
 │   ├── case-studies/     One file per case study
 │   ├── process/          Triple Diamond + PAIR page
 │   └── writing/          Blog posts (drafts → published)
-├── assets/             ← Visual files to drag into Framer
+├── assets/             ← Visual files referenced by Astro components
 │   ├── logos/            Company logos for carousel
 │   ├── portrait/         Hero portrait
 │   ├── case-study-heroes/ Hero images per case

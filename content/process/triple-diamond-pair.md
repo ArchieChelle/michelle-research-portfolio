@@ -16,7 +16,7 @@ last_updated: 2026-04-26
 
 ## Framework: Triple Diamond
 
-*(Diagram lives in Framer. Describe the three diamonds here.)*
+*(Diagram to be built as an Astro component. Describe the three diamonds here.)*
 
 ### Diamond 1 — Discover
 *(What happens here. Who's involved. What deliverable comes out.)*

@@ -25,7 +25,7 @@ I partner with product and engineering teams to uncover what users actually need
 
 ---
 
-## Notes for Framer
+## Implementation notes
 
 - Left column: 5 of 12 cols
 - Right column: 7 of 12 cols (image block)
