@@ -1,0 +1,21 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code workspace (keep settings.json shareable, ignore user state)
+.vscode/*
+!.vscode/settings.json
+
+# Editor backups
+*.swp
+*~
+
+# Astro / Node
+node_modules/
+dist/
+.astro/
+
+# Large source files (uncomment if needed later)
+# *.psd
+# *.sketch
+# *.fig
