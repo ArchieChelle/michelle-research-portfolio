@@ -15,6 +15,10 @@ node_modules/
 dist/
 .astro/
 
+# Environment variables
+.env
+.env.local
+
 # Large source files (uncomment if needed later)
 # *.psd
 # *.sketch
