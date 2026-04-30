@@ -1,0 +1,178 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const projects = [
+  {
+    label: 'FEATURED',
+    title: "The New Playbook: Crafting SportsEngine Mobile's Vision and Value Proposition",
+    outcome: 'Narrowed 13 competing features to 5 strategic investments. Directly influenced leadership to expand team resources.',
+    tags: 'Generative Research · Mixed-Methods · End-to-End',
+    slug: '/projects/new-playbook',
+    disabled: false,
+  },
+  {
+    label: 'CASE STUDY',
+    title: 'Smart Scaling: MaxDiff Guiding Our API Strategy for ROI',
+    outcome: 'Quantified feature value to guide API investment decisions.',
+    tags: 'Strategic Research · Survey · Feature Prioritization',
+    slug: '/projects/smart-scaling',
+    disabled: false,
+  },
+  {
+    label: 'CASE STUDY',
+    title: 'Evaluating Tier-Feature Fit to Inform SE Play Pricing Strategy',
+    outcome: 'Tier recommendations adopted by executives to inform pricing strategy.',
+    tags: 'Evaluative Research · Survey · Feature Prioritization',
+    slug: '/projects/seplay-pricing',
+    disabled: false,
+  },
+  {
+    label: 'SANDBOX',
+    title: 'Tax Intel Pro — AI-Powered Document System',
+    outcome: 'End-to-end intelligent document processing pipeline in progress.',
+    tags: 'Sandbox Project · AI · Document Processing',
+    slug: '/projects/tax-intel-pro',
+    disabled: false,
+  },
+  {
+    label: 'COMING SOON',
+    title: 'ResearchOps',
+    outcome: 'Content in progress.',
+    tags: 'ResearchOps',
+    slug: null,
+    disabled: true,
+  },
+];
+---
+
+<Layout title="Projects — Michelle Ruth Exantus" description="Research that moved teams, not just slides.">
+  <main class="projects-page">
+    <div class="projects-header">
+      <h1>Projects</h1>
+      <p class="projects-subtext">Research that moved teams, not just slides.</p>
+    </div>
+    <div class="projects-grid">
+      {projects.map(project => (
+        <article class:list={['project-card', { disabled: project.disabled }]}>
+          <div class="card-image" aria-hidden="true"></div>
+          <div class="card-body">
+            <span class="card-label">{project.label}</span>
+            <p class="card-tags">{project.tags}</p>
+            <h2 class="card-title">{project.title}</h2>
+            <p class="card-outcome">{project.outcome}</p>
+            {!project.disabled && project.slug && (
+              <a href={project.slug} class="card-link">View project →</a>
+            )}
+            {project.disabled && (
+              <span class="card-soon">In progress</span>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .projects-page {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: calc(72px + 64px) 64px 96px;
+  }
+
+  .projects-header {
+    margin-bottom: 64px;
+  }
+
+  .projects-header h1 {
+    font-size: 68px;
+    margin: 0 0 16px;
+    line-height: 1.1;
+  }
+
+  .projects-subtext {
+    font-size: 18px;
+    color: var(--color-black-coffee);
+    margin: 0;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-card.disabled {
+    opacity: 0.45;
+    pointer-events: none;
+  }
+
+  .card-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--color-parchment);
+  }
+
+  .card-body {
+    padding: 24px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .card-label {
+    font-family: var(--font-label);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-ember);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .card-tags {
+    font-family: var(--font-label);
+    font-size: 13px;
+    color: var(--color-wisteria);
+    margin: 0;
+  }
+
+  .card-title {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    color: var(--color-jacarta);
+    margin: 4px 0 0;
+    line-height: 1.25;
+  }
+
+  .card-outcome {
+    font-size: 16px;
+    color: var(--color-black-coffee);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .card-link {
+    font-family: var(--font-label);
+    font-size: 15px;
+    color: var(--color-ember);
+    text-decoration: none;
+    margin-top: 8px;
+  }
+
+  .card-link:hover {
+    text-decoration: underline;
+  }
+
+  .card-soon {
+    font-family: var(--font-label);
+    font-size: 13px;
+    color: var(--color-wisteria);
+    margin-top: 8px;
+    font-style: italic;
+  }
+</style>

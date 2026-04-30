@@ -53,7 +53,7 @@ Asymmetry balanced by consistent spacing.
 ## 3. Navigation
 
 **Left:** Michelle Research logo (MR monogram + wordmark + "The Architect Chelle" tagline)  
-**Right:** Work · Process · Writing · Projects · Contact  
+**Right:** Projects · Process · Writing · Contact  
 **CTA:** Small Ember-colored "Let's Connect" button  
 **Behavior:** Sticky on scroll. Transparent over hero, solid Parchment on scroll.
 
@@ -165,11 +165,12 @@ Asymmetry balanced by consistent spacing.
 | Page | Status |
 |---|---|
 | `/` — Homepage | Build now |
-| `/work/new-playbook` | Build now (featured case study) |
-| `/work/smart-scaling` | Build now |
-| `/work/seplay-pricing` | Build now |
-| `/work/tax-intel-pro` | Build now (sandbox label) |
-| `/work/researchops` | Coming soon |
+| `/projects` | Build now (flat grid index) |
+| `/projects/new-playbook` | Build now (featured case study) |
+| `/projects/smart-scaling` | Build now |
+| `/projects/seplay-pricing` | Build now |
+| `/projects/tax-intel-pro` | Build now (sandbox label) |
+| `/projects/researchops` | Coming soon |
 | `/process` | Build now (full PAIR + Triple Diamond) |
 | `/writing` | Launch light, populate as content is ready |
 | `/contact` | Build now |

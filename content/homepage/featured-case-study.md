@@ -35,4 +35,5 @@ Narrowed 13 competing features to 5 strategic investments. Directly influenced l
 - Asymmetric editorial block layout
 - Left column: section number + label
 - Center/right: large case card
+- Card links to `/projects/new-playbook`
 - Card needs hero image (see `/assets/case-study-heroes/new-playbook.jpg`)
