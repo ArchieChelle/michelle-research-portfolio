@@ -1,28 +1,45 @@
-# Color Palette — Option B "Signature Split Grid"
+# Color Palette — Plum & Ember
 
-Quick reference. Copy hex codes directly from this file when working in Astro.
+Quick reference. Copy tokens directly when working in Astro.
+
+## Tokens
 
 | Token | Hex | Role |
 |---|---|---|
-| Black Coffee | `#3A2D34` | Body text |
-| Jacarta | `#3F2A52` | Headings, navigation |
-| Ember | `#A35139` | Primary CTA |
-| Wisteria | `#BEAEDB` | Soft accent (hero panel) |
-| Amber | `#FFB162` | Highlight accent |
-| Parchment | `#EEE9DF` | Background |
-| White | `#FFFFFF` | Surface |
+| `--mr-bg` | `#EEE9DF` | Page background · Canvas |
+| `--mr-surface` | `#FFFFFF` | Cards · Modals · Surface |
+| `--mr-text` | `#3A2D34` | Body text · Captions |
+| `--mr-heading` | `#3F2A52` | Headings · Navigation |
+| `--mr-cta` | `#A35139` | Buttons · Links · Marks |
+| `--mr-soft` | `#BEAEDB` | Cards · Tags · Illustrations |
+| `--mr-highlight` | `#FFB162` | Selective callouts only |
+| `--mr-rule` | `rgba(58,45,52,.18)` | Dividers · Borders · Hairlines |
 
 ## Usage rules
 
-- **Headings:** Jacarta `#3F2A52`
-- **Body copy:** Black Coffee `#3A2D34`
-- **CTA buttons & key arrows:** Ember `#A35139`
-- **Hero image background panel:** Wisteria `#BEAEDB`
-- **Accent details (circles, brush strokes):** Ember + Amber
-- **Page background:** Parchment `#EEE9DF`
+- **Headings & nav:** `--mr-heading`
+- **Body copy:** `--mr-text`
+- **Primary CTA buttons, links, accent marks:** `--mr-cta`
+- **Hero image background panel:** `--mr-soft`
+- **Page & canvas background:** `--mr-bg`
+- **Cards and modals:** `--mr-surface`
+- **Dividers, borders, rules:** `--mr-rule`
+
+## Usage ratio guideline
+
+Color should appear in roughly these proportions across any layout:
+
+| Color | Proportion | Role |
+|---|---|---|
+| Background | 55% | The ground — dominant |
+| Heading | 25% | Structure and voice |
+| CTA | 10% | Direction and action |
+| Soft Accent | 6% | Decoration |
+| Highlight | 4% | Emphasis — use sparingly |
 
 ## Avoid
 
-- Don't use Wisteria for text — it's a panel/background color only
-- Don't use Amber for large fills — it's a highlight, not a base
+- Don't use `--mr-soft` for text — it's a panel and decoration color only
+- Don't use `--mr-highlight` for large fills — it's a selective accent, not a base
 - Don't introduce colors outside this palette
+- Soft Accent and Highlight are decorative, not load-bearing — they earn their use

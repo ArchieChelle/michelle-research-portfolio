@@ -12,6 +12,15 @@ The michelle.research voice is **polished, formal, confident** — but never stu
 | **Editorial** | Think New Yorker, not LinkedIn. Sentences breathe. White space matters. |
 | **Generous** | Credit cross-functional partners. Research that moves teams is research that mattered. |
 
+## We sound like / we don't sound like
+
+| We sound like | We don't sound like |
+|---|---|
+| Direct, considered, generous with context. | Salesy, breathless, or buzzword-heavy. |
+| "Here's what we found, and what we'd do next." | "Synergizing user-centric paradigms." |
+| Confident with our limits — clear about what we don't yet know. | Falsely certain or apologetically vague. |
+| Numbers that earn trust. `26% improvement` beats `significant improvement`. | Vague superlatives with no evidence. |
+
 ## Sentence-level rules
 
 - **No filler.** "In order to" → "to". "Due to the fact that" → "because". Cut.
