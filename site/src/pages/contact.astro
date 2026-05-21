@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const formEndpoint = import.meta.env.FORMSPREE_ENDPOINT;
+const submitted = Astro.url.searchParams.get('submitted') === '1';
+const errored = Astro.url.searchParams.get('error') === '1';
+---
+
+<Layout
+  title="Contact | michelle.research"
+  description="Contact Michelle Research."
+>
+  <main class="simple-page">
+    <section class="simple-card" aria-labelledby="contact-title">
+      <p class="eyebrow">Contact</p>
+      <h1 id="contact-title">Let’s build what’s next.</h1>
+      <p>Open to UX research, AI product research, and human-centered systems opportunities.</p>
+
+      {submitted && <p class="form-status success" role="status">Thanks — I’ll be in touch within 48 hours.</p>}
+      {errored && <p class="form-status error" role="alert">Something went wrong. Try again or reach out on LinkedIn.</p>}
+
+      <form method="POST" action={formEndpoint} class="contact-form">
+        <input type="hidden" name="_next" value={Astro.url.origin + '/contact?submitted=1'} />
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows={5} required></textarea>
+
+        <button type="submit" disabled={!formEndpoint}>Send</button>
+      </form>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .simple-page {
+    width: min(1100px, calc(100vw - 48px));
+    margin: 0 auto;
+    padding: 72px 0 96px;
+  }
+
+  .simple-card {
+    max-width: 760px;
+    border: 1px solid var(--mr-rule);
+    background: var(--mr-surface);
+    padding: 48px;
+  }
+
+  .eyebrow {
+    margin: 0 0 12px;
+    color: var(--mr-heading);
+    font-family: var(--font-mono);
+    font-size: var(--fs-small);
+    line-height: var(--lh-small);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  h1 {
+    margin: 0 0 16px;
+    font-size: var(--fs-h2);
+    line-height: var(--lh-h2);
+  }
+
+  p {
+    margin: 0 0 24px;
+    max-width: 56ch;
+  }
+
+  .form-status {
+    margin: 0 0 20px;
+    padding: 10px 12px;
+    border: 1px solid var(--mr-rule);
+  }
+
+  .form-status.success {
+    background: rgba(190, 174, 219, 0.22);
+    color: var(--mr-heading);
+  }
+
+  .form-status.error {
+    background: rgba(163, 81, 57, 0.12);
+    color: var(--mr-text);
+  }
+
+  .contact-form {
+    display: grid;
+    gap: 12px;
+  }
+
+  label {
+    color: var(--mr-heading);
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    border: 1px solid var(--mr-rule);
+    background: #fff;
+    color: var(--mr-text);
+    padding: 12px 14px;
+  }
+
+  button {
+    margin-top: 8px;
+    width: fit-content;
+    border: 0;
+    border-radius: 2px;
+    background: var(--mr-cta);
+    color: #fff;
+    padding: 12px 20px;
+    cursor: pointer;
+  }
+
+  button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+</style>
