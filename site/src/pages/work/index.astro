@@ -1,0 +1,33 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const caseStudies = await getCollection('case-studies');
+---
+
+<Layout title="Work — Michelle Ruth Exantus" description="Case studies and applied research outcomes.">
+  <main class="work-index">
+    <h1>Work</h1>
+    <p>Case studies from product strategy, evaluative research, and applied AI exploration.</p>
+    <div class="grid">
+      {caseStudies.map((entry) => (
+        <article>
+          <p class="label">{entry.data.heroLabel}</p>
+          <h2>{entry.data.title}</h2>
+          <p>{entry.data.description}</p>
+          <a href={`/work/${entry.data.slug}`}>Read case study →</a>
+        </article>
+      ))}
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .work-index { max-width: 1160px; margin: 0 auto; padding: calc(72px + 64px) 48px 96px; }
+  h1 { font-size: 68px; margin: 0 0 10px; }
+  .grid { margin-top: 38px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+  article { border: 1px solid var(--mr-rule); padding: 24px; background: rgba(255,255,255,.22); border-radius: 8px; }
+  .label { margin: 0; color: var(--mr-cta); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+  h2 { margin: 8px 0; font-size: 30px; }
+  @media (max-width: 760px){ .grid { grid-template-columns: 1fr; } }
+</style>

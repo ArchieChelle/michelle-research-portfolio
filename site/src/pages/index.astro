@@ -19,18 +19,21 @@ const projects = [
     tag: 'Strategic research',
     read: '4 min read',
     imageClass: 'crop-smart',
+    href: '/work/smart-scaling',
   },
   {
     title: 'SE Play Tier-Feature Fit: Understanding What Matters Most',
     tag: 'Pricing research',
     read: '3 min read',
     imageClass: 'crop-seplay',
+    href: '/work/seplay-pricing',
   },
   {
     title: 'Tax Intel Pro: Uncovering Opportunities for Platform Growth',
     tag: 'Sandbox',
     read: '4 min read',
     imageClass: 'crop-tax',
+    href: '/work/tax-intel-pro',
   },
 ];
 
@@ -180,10 +183,12 @@ const articles = [
 
     <section class="portfolio-bento" id="projects" aria-labelledby="featured-title">
       <article class="featured-case">
-        <div class="mockup-crop crop-featured"></div>
+        <a href="/work/new-playbook" aria-label="Open featured case study">
+          <div class="mockup-crop crop-featured"></div>
+        </a>
         <div class="featured-copy">
           <span class="tag">Featured Project</span>
-          <h2 id="featured-title">Aligning Stakeholders and Prioritizing Mobile Roadmap Concepts</h2>
+          <h2 id="featured-title"><a href="/work/new-playbook">Aligning Stakeholders and Prioritizing Mobile Roadmap Concepts</a></h2>
           <p>
             I led mixed-methods research to uncover user needs, evaluate 13 roadmap
             concepts, and align cross-functional stakeholders, narrowing to 5 high-impact investments.
@@ -191,7 +196,7 @@ const articles = [
           <div class="meta-line">
             <span>5 min read</span>
             <span>Case Study</span>
-            <a href="/projects/new-playbook" aria-label="Read featured case study">&rarr;</a>
+            <a href="/work/new-playbook" aria-label="Read featured case study">&rarr;</a>
           </div>
         </div>
       </article>
@@ -199,14 +204,14 @@ const articles = [
       <div class="project-stack">
         {projects.map((project) => (
           <article class="project-card">
-            <div class:list={['mockup-crop', project.imageClass]}></div>
+            <a href={project.href} aria-label={`Open ${project.title}`}><div class:list={['mockup-crop', project.imageClass]}></div></a>
             <div class="project-copy">
               <span class="project-tag">{project.tag}</span>
-              <h3>{project.title}</h3>
+              <h3><a href={project.href}>{project.title}</a></h3>
               <div class="meta-line">
                 <span>{project.read}</span>
                 <span>Case Study</span>
-                <a href="/projects" aria-label={`View ${project.title}`}>&rarr;</a>
+                <a href={project.href} aria-label={`View ${project.title}`}>&rarr;</a>
               </div>
             </div>
           </article>
@@ -1422,4 +1427,11 @@ const articles = [
       visibility: visible;
     }
   }
+</style>
+
+
+<style>
+  .featured-copy h2 a, .project-copy h3 a { color: inherit; text-decoration: none; }
+  .featured-copy h2 a:hover, .project-copy h3 a:hover { text-decoration: underline; }
+  .featured-case > a, .project-card > a { display: block; }
 </style>
