@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 210" width="520" height="210" role="img" aria-label="michelle.research stacked lockup variants">
+  <title>michelle.research — Stacked Lockup (Light + Dark)</title>
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@600&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- ── LEFT: Light stacked lockup ─────────────────────── -->
+  <rect x="0" y="0" width="255" height="210" fill="#EEE9DF"/>
+
+  <!-- Mark centered: 80px wide (104:84 = 0.762 ratio → 80 × 0.762 = 60.96px high) -->
+  <!-- scale: 80/104 = 0.769 -->
+  <g transform="translate(88, 20) scale(0.769)">
+    <polygon points="0,84 0,0 26,0 50,37 50,63 24,33 24,84" fill="#3F2A52"/>
+    <polygon points="104,84 104,0 78,0 54,37 54,63 80,33 80,84" fill="#3F2A52"/>
+  </g>
+
+  <!-- Wordmark centered below mark, 20px gap -->
+  <!-- Mark bottom: 20 + 64.6 = 84.6px → wordmark y ≈ 84.6 + 20 + cap-height -->
+  <text
+    x="127"
+    y="134"
+    text-anchor="middle"
+    font-family="'IBM Plex Serif', Georgia, serif"
+    font-weight="600"
+    font-size="22"
+    letter-spacing="-0.3">
+    <tspan fill="#3F2A52">michelle</tspan><tspan fill="#A35139" dx="2" letter-spacing="0">.</tspan><tspan fill="#3F2A52" dx="2" letter-spacing="-0.3">research</tspan>
+  </text>
+
+  <!-- ── RIGHT: Dark stacked lockup ────────────────────── -->
+  <rect x="260" y="0" width="260" height="210" fill="#3F2A52"/>
+
+  <!-- Mark centered on dark -->
+  <g transform="translate(348, 20) scale(0.769)">
+    <polygon points="0,84 0,0 26,0 50,37 50,63 24,33 24,84" fill="#EEE9DF"/>
+    <polygon points="104,84 104,0 78,0 54,37 54,63 80,33 80,84" fill="#EEE9DF"/>
+  </g>
+
+  <!-- Wordmark centered on dark -->
+  <text
+    x="390"
+    y="134"
+    text-anchor="middle"
+    font-family="'IBM Plex Serif', Georgia, serif"
+    font-weight="600"
+    font-size="22"
+    letter-spacing="-0.3">
+    <tspan fill="#EEE9DF">michelle</tspan><tspan fill="#FFB162" dx="2" letter-spacing="0">.</tspan><tspan fill="#EEE9DF" dx="2" letter-spacing="-0.3">research</tspan>
+  </text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 72" width="520" height="72" role="img" aria-label="michelle.research horizontal lockup — light">
+  <title>michelle.research — Horizontal Lockup (Light)</title>
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@600&amp;display=swap');
+      .wm { font-family: 'IBM Plex Serif', Georgia, serif; font-weight: 600; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="520" height="72" fill="#EEE9DF"/>
+
+  <!-- Split M mark — scaled to 44px height (104:84 ratio → 54.5px wide) -->
+  <!-- scale factor: 44/84 = 0.5238 → mark width = 104 * 0.5238 = 54.5px -->
+  <g transform="translate(20, 14) scale(0.5238)">
+    <polygon points="0,84 0,0 26,0 50,37 50,63 24,33 24,84" fill="#3F2A52"/>
+    <polygon points="104,84 104,0 78,0 54,37 54,63 80,33 80,84" fill="#3F2A52"/>
+  </g>
+
+  <!-- Divider hairline — sits between mark and wordmark -->
+  <line x1="90" y1="12" x2="90" y2="60" stroke="#3F2A52" stroke-width="1" opacity="0.2"/>
+
+  <!-- Wordmark: michelle.research — IBM Plex Serif SemiBold 600 -->
+  <!-- 2px advance gap each side of the period, achieved via dx -->
+  <text font-family="'IBM Plex Serif', Georgia, serif" font-weight="600" font-size="32" letter-spacing="-0.4">
+    <tspan x="106" y="47" fill="#3F2A52">michelle</tspan><tspan fill="#A35139" dx="2" letter-spacing="0">.</tspan><tspan fill="#3F2A52" dx="2" letter-spacing="-0.4">research</tspan>
+  </text>
+</svg>

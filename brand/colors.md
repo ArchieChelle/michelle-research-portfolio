@@ -9,7 +9,7 @@ Quick reference. Copy tokens directly when working in Astro.
 | `--mr-bg` | `#EEE9DF` | Page background · Canvas |
 | `--mr-surface` | `#FFFFFF` | Cards · Modals · Surface |
 | `--mr-text` | `#3A2D34` | Body text · Captions |
-| `--mr-heading` | `#3F2A52` | Headings · Navigation |
+| `--mr-heading` | `1` | Headings · Navigation |
 | `--mr-cta` | `#A35139` | Buttons · Links · Marks |
 | `--mr-soft` | `#BEAEDB` | Cards · Tags · Illustrations |
 | `--mr-highlight` | `#FFB162` | Selective callouts only |

@@ -2,11 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 
 const companyLogos = [
-  { name: 'SportsEngine HQ', label: 'sportsengine', sublabel: 'HQ', kind: 'two-line' },
-  { name: 'SportsEngine Mobile', label: 'sportsengine', sublabel: 'MOBILE', kind: 'two-line' },
-  { name: 'GolfPass', label: 'GOLFPASS', kind: 'wordmark' },
-  { name: 'GolfNow', label: 'GOLFNOW', kind: 'wordmark' },
-  { name: 'SportsNext', label: 'SPORTSNEXT', kind: 'wordmark wide' },
+  { name: 'SportsEngine HQ', src: '/images/logos/sehq.webp', kind: 'image-logo sportsengine-logo' },
+  { name: 'SportsEngine Mobile', src: '/images/logos/seplay.webp', kind: 'image-logo sportsengine-logo' },
+  { name: 'GolfPass', src: '/images/logos/golfpass.svg', kind: 'image-logo golf-logo' },
+  { name: 'GolfNow', src: '/images/logos/golfnow.svg', kind: 'image-logo golf-logo' },
+  { name: 'SportsNext', src: '/images/logos/sportsnext.jpg', kind: 'image-logo sportsnext-logo' },
   { name: 'NBCUniversal', label: 'NBCUniversal', kind: 'serif' },
   { name: 'First Family Trust', label: 'FIRST FAMILY TRUST', kind: 'stacked' },
 ];
@@ -168,8 +168,14 @@ const articles = [
             <div class="logo-marquee-group" aria-hidden={setIndex > 0 ? 'true' : undefined}>
               {companyLogos.map((logo) => (
                 <div class:list={['marquee-logo', logo.kind]} aria-label={setIndex === 0 ? logo.name : undefined}>
-                  <span>{logo.label}</span>
-                  {logo.sublabel && <small>{logo.sublabel}</small>}
+                  {logo.src ? (
+                    <img src={logo.src} alt="" loading="lazy" decoding="async" />
+                  ) : (
+                    <>
+                      <span>{logo.label}</span>
+                      {logo.sublabel && <small>{logo.sublabel}</small>}
+                    </>
+                  )}
                 </div>
               ))}
             </div>
@@ -594,6 +600,34 @@ const articles = [
 
   .marquee-logo:hover {
     opacity: 1;
+  }
+
+  .marquee-logo img {
+    display: block;
+    width: auto;
+    max-width: 132px;
+    max-height: 34px;
+    object-fit: contain;
+  }
+
+  .marquee-logo.image-logo img {
+    filter: grayscale(1) brightness(0) saturate(100%) invert(20%) sepia(17%) saturate(1265%) hue-rotate(229deg) brightness(90%) contrast(91%);
+  }
+
+  .marquee-logo.sportsengine-logo img {
+    max-width: 136px;
+    max-height: 32px;
+  }
+
+  .marquee-logo.golf-logo img {
+    max-width: 134px;
+    max-height: 33px;
+  }
+
+  .marquee-logo.sportsnext-logo img {
+    max-width: 138px;
+    max-height: 32px;
+    mix-blend-mode: multiply;
   }
 
   .marquee-logo span {
