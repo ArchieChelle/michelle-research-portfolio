@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PAIR Triple Diamond Preview</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --slate-950: #020617;
+        --slate-900: #0f172a;
+        --slate-800: #1e293b;
+        --slate-700: #334155;
+        --slate-500: #64748b;
+        --slate-400: #94a3b8;
+        --slate-300: #cbd5e1;
+        --amber-500: #f59e0b;
+        --text: #f1f5f9;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 32px;
+        background: #0b1020;
+        color: var(--text);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+      }
+
+      .pair-preview {
+        width: min(1120px, 100%);
+        min-height: 600px;
+        display: flex;
+        gap: 32px;
+        padding: 32px;
+        border: 1px solid var(--slate-800);
+        border-radius: 16px;
+        background: var(--slate-950);
+        color: var(--text);
+      }
+
+      .visual-panel {
+        position: relative;
+        flex: 1;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        padding: 24px;
+        border-radius: 12px;
+        background: rgb(15 23 42 / 0.5);
+      }
+
+      .diamonds {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        width: 100%;
+        max-width: 448px;
+      }
+
+      .stage-button {
+        position: relative;
+        width: 112px;
+        height: 112px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        opacity: 0.4;
+        scale: 0.95;
+        transition:
+          opacity 180ms ease,
+          scale 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .stage-button.is-active {
+        opacity: 1;
+        scale: 1.1;
+      }
+
+      .stage-button:focus-visible {
+        outline: 2px solid var(--amber-500);
+        outline-offset: 8px;
+        border-radius: 10px;
+      }
+
+      .stage-diamond {
+        position: absolute;
+        inset: 0;
+        border: 2px solid var(--stage-color);
+        border-radius: 8px;
+        transform: rotate(45deg);
+        background: transparent;
+        transition: background-color 180ms ease;
+      }
+
+      .stage-button.is-active .stage-diamond {
+        background: color-mix(in srgb, var(--stage-color) 8%, transparent);
+      }
+
+      .stage-number {
+        position: relative;
+        z-index: 1;
+        transform: translateY(12px);
+        padding: 2px 6px;
+        border-radius: 999px;
+        background: rgb(2 6 23 / 0.82);
+        color: var(--stage-color);
+        font-family:
+          "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .stage-label {
+        position: absolute;
+        z-index: 1;
+        top: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: var(--slate-300);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .weaver-line {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      .weaver-track {
+        stroke: rgb(245 158 11 / 0.3);
+        stroke-width: 2;
+        stroke-dasharray: 4 4;
+      }
+
+      .weaver-progress {
+        stroke: var(--amber-500);
+        stroke-width: 3;
+        stroke-dasharray: 1;
+        stroke-dashoffset: calc(1 - var(--progress));
+        transition: stroke-dashoffset 260ms ease;
+      }
+
+      .step-indicator {
+        position: relative;
+        z-index: 2;
+        margin-top: 32px;
+        color: var(--slate-500);
+        font-family:
+          "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+      }
+
+      .content-panel {
+        flex: 1;
+        min-height: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .eyebrow,
+      .principles-label {
+        display: block;
+        font-family:
+          "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+        font-size: 12px;
+      }
+
+      .eyebrow {
+        margin-bottom: 4px;
+        color: var(--amber-500);
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0 0 4px;
+        color: #ffffff;
+        font-size: 24px;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+
+      .subtitle {
+        margin: 0 0 12px;
+        color: var(--active-color);
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .framing {
+        max-width: 58ch;
+        margin: 0 0 18px;
+        color: var(--slate-400);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .content-sections {
+        display: grid;
+        gap: 10px;
+      }
+
+      .content-section {
+        padding: 12px;
+        border: 1px solid var(--slate-800);
+        border-radius: 8px;
+        background: rgb(15 23 42 / 0.44);
+      }
+
+      .content-section.is-gap {
+        border-color: color-mix(in srgb, var(--active-color) 45%, var(--slate-800));
+        background: color-mix(in srgb, var(--active-color) 9%, var(--slate-900));
+      }
+
+      .content-section h2 {
+        margin: 0 0 7px;
+        color: var(--slate-300);
+        font-family:
+          "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .content-section.is-gap h2 {
+        color: var(--active-color);
+      }
+
+      .content-section ul {
+        display: grid;
+        gap: 4px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .content-section li {
+        position: relative;
+        padding-left: 14px;
+        color: var(--slate-300);
+        font-size: 12.5px;
+        line-height: 1.38;
+      }
+
+      .content-section li::before {
+        content: "";
+        position: absolute;
+        top: 0.62em;
+        left: 0;
+        width: 5px;
+        height: 5px;
+        border-radius: 999px;
+        background: var(--active-color);
+      }
+
+      .principles-block {
+        margin-top: 14px;
+      }
+
+      .principles-label {
+        margin-bottom: 8px;
+        color: var(--slate-500);
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 10px;
+        border: 1px solid var(--slate-800);
+        border-radius: 6px;
+        background: var(--slate-900);
+        color: var(--slate-300);
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .nav-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-top: 24px;
+        padding-top: 16px;
+        border-top: 1px solid rgb(15 23 42 / 1);
+      }
+
+      .nav-button {
+        padding: 7px 12px;
+        border: 1px solid var(--slate-800);
+        border-radius: 4px;
+        background: var(--slate-900);
+        color: var(--text);
+        font-family:
+          "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+        font-size: 12px;
+        cursor: pointer;
+        transition: background-color 160ms ease;
+      }
+
+      .nav-button:not(:disabled):hover {
+        background: var(--slate-800);
+      }
+
+      .nav-button:disabled {
+        cursor: not-allowed;
+        opacity: 0.3;
+      }
+
+      .dots {
+        display: flex;
+        gap: 4px;
+      }
+
+      .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: var(--slate-700);
+      }
+
+      .dot.is-active {
+        background: var(--amber-500);
+      }
+
+      @media (max-width: 760px) {
+        body {
+          padding: 16px;
+        }
+
+        .pair-preview {
+          flex-direction: column;
+          padding: 20px;
+          gap: 24px;
+        }
+
+        .stage-button {
+          width: 88px;
+          height: 88px;
+        }
+
+        h1 {
+          font-size: 22px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="pair-preview" style="--active-color: #6366f1; --progress: 0.333">
+      <section class="visual-panel" aria-label="Triple Diamond navigation">
+        <div class="diamonds">
+          <button class="stage-button is-active" type="button" data-stage="0" style="--stage-color: #6366f1">
+            <span class="stage-diamond"></span>
+            <span class="stage-number">01</span>
+            <span class="stage-label">Discover</span>
+          </button>
+          <button class="stage-button" type="button" data-stage="1" style="--stage-color: #3b82f6">
+            <span class="stage-diamond"></span>
+            <span class="stage-number">02</span>
+            <span class="stage-label">Define</span>
+          </button>
+          <button class="stage-button" type="button" data-stage="2" style="--stage-color: #ec4899">
+            <span class="stage-diamond"></span>
+            <span class="stage-number">03</span>
+            <span class="stage-label">Deliver</span>
+          </button>
+        </div>
+
+        <svg class="weaver-line" viewBox="0 0 500 300" fill="none" aria-hidden="true">
+          <path class="weaver-track" d="M 50 150 Q 150 50 250 150 T 450 150"></path>
+          <path class="weaver-progress" pathLength="1" d="M 50 150 Q 150 50 250 150 T 450 150"></path>
+        </svg>
+
+        <div class="step-indicator">ACTIVE STEP: <span data-step>01</span> // CLICK SHAPES TO NAVIGATE</div>
+      </section>
+
+      <section class="content-panel">
+        <div>
+          <span class="eyebrow">Triple Diamond + Google PAIR</span>
+          <h1 data-title>Diamond 1: Discover</h1>
+          <p class="subtitle" data-subtitle>Problem fit, data readiness, success metrics</p>
+          <p class="framing">
+            Traditional product development still matters. AI adds data, model, evaluation, monitoring, and retraining
+            responsibilities that need research leadership.
+          </p>
+
+          <div class="content-sections">
+            <article class="content-section">
+              <h2>Transferable UX Research Skills</h2>
+              <ul data-transferable>
+                <li>Discovery research</li>
+                <li>Stakeholder alignment</li>
+                <li>Define user problem and success metrics</li>
+              </ul>
+            </article>
+            <article class="content-section">
+              <h2>AI Product Research Skills</h2>
+              <ul data-ai-specific>
+                <li>Decide whether AI is the right tool</li>
+                <li>Identify data requirements and risks</li>
+                <li>Define failure modes early</li>
+              </ul>
+            </article>
+            <article class="content-section is-gap">
+              <h2>Where research closes the gap</h2>
+              <ul data-research-gap>
+                <li>Frame user needs, edge cases, and quality thresholds before teams commit to a model path.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="principles-block">
+            <span class="principles-label">Activated core principles:</span>
+            <div class="chips" data-chips>
+              <span class="chip">User Needs &amp; Defining Success</span>
+              <span class="chip">Data + Model Evolution</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-row">
+          <button class="nav-button" type="button" data-prev disabled>&larr; PREV</button>
+          <div class="dots" aria-hidden="true">
+            <span class="dot is-active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <button class="nav-button" type="button" data-next>NEXT &rarr;</button>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const stages = [
+        {
+          title: "Diamond 1: Discover",
+          subtitle: "Problem fit, data readiness, success metrics",
+          transferable: ["Discovery research", "Stakeholder alignment", "Define user problem and success metrics"],
+          aiSpecific: ["Decide whether AI is the right tool", "Identify data requirements and risks", "Define failure modes early"],
+          researchGap: ["Frame user needs, edge cases, and quality thresholds before teams commit to a model path."],
+          pairChapters: ["User Needs & Defining Success", "Data + Model Evolution"],
+          color: "#6366f1",
+        },
+        {
+          title: "Diamond 2: Define",
+          subtitle: "Experience design, evaluation design, trust",
+          transferable: ["Prioritize opportunities", "Prototype workflows", "Translate insights into requirements"],
+          aiSpecific: ["Select model/prompt approach", "Design evaluation rubrics", "Plan confidence, explanations, and bias checks"],
+          researchGap: ["Turn probabilistic outputs into testable acceptance criteria, reducing over-reliance and mismatched expectations."],
+          pairChapters: ["Mental Models", "Trust + Explanations"],
+          color: "#3b82f6",
+        },
+        {
+          title: "Diamond 3: Deliver",
+          subtitle: "Launch, monitor, learn, retrain",
+          transferable: ["Usability testing", "Launch readiness", "Adoption and feedback loops"],
+          aiSpecific: ["Monitor model/data drift", "Support human-in-the-loop controls", "Retrain or re-prompt based on evidence"],
+          researchGap: ["Treat post-launch as continuous research, because AI quality can degrade even when the product UI does not change."],
+          pairChapters: ["Feedback + Controls", "Errors + Graceful Failures"],
+          color: "#ec4899",
+        },
+      ];
+
+      let activeStage = 0;
+
+      const root = document.querySelector(".pair-preview");
+      const stageButtons = [...document.querySelectorAll(".stage-button")];
+      const dots = [...document.querySelectorAll(".dot")];
+      const prevButton = document.querySelector("[data-prev]");
+      const nextButton = document.querySelector("[data-next]");
+      const title = document.querySelector("[data-title]");
+      const subtitle = document.querySelector("[data-subtitle]");
+      const transferable = document.querySelector("[data-transferable]");
+      const aiSpecific = document.querySelector("[data-ai-specific]");
+      const researchGap = document.querySelector("[data-research-gap]");
+      const chips = document.querySelector("[data-chips]");
+      const step = document.querySelector("[data-step]");
+
+      function renderList(target, items) {
+        target.replaceChildren(...items.map((item) => {
+          const listItem = document.createElement("li");
+          listItem.textContent = item;
+          return listItem;
+        }));
+      }
+
+      function setStage(index) {
+        activeStage = Math.max(0, Math.min(stages.length - 1, index));
+        const data = stages[activeStage];
+
+        root.style.setProperty("--active-color", data.color);
+        root.style.setProperty("--progress", String((activeStage + 1) / stages.length));
+        title.textContent = data.title;
+        subtitle.textContent = data.subtitle;
+        step.textContent = `0${activeStage + 1}`;
+        renderList(transferable, data.transferable);
+        renderList(aiSpecific, data.aiSpecific);
+        renderList(researchGap, data.researchGap);
+        chips.replaceChildren(...data.pairChapters.map((chapter) => {
+          const chip = document.createElement("span");
+          chip.className = "chip";
+          chip.textContent = chapter;
+          return chip;
+        }));
+
+        stageButtons.forEach((button, buttonIndex) => {
+          button.classList.toggle("is-active", buttonIndex === activeStage);
+        });
+        dots.forEach((dot, dotIndex) => {
+          dot.classList.toggle("is-active", dotIndex === activeStage);
+        });
+        prevButton.disabled = activeStage === 0;
+        nextButton.disabled = activeStage === stages.length - 1;
+      }
+
+      stageButtons.forEach((button) => {
+        button.addEventListener("click", () => setStage(Number(button.dataset.stage)));
+      });
+      prevButton.addEventListener("click", () => setStage(activeStage - 1));
+      nextButton.addEventListener("click", () => setStage(activeStage + 1));
+    </script>
+  </body>
+</html>

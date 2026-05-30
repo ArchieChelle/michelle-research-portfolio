@@ -1,0 +1,323 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PairTripleDiamondDraft from '../components/PairTripleDiamondDraft.astro';
+
+const lifecycleComparisons = [
+  {
+    title: 'What carries over',
+    body: 'Discovery, design, build, test, launch, and iterate still anchor the work. Strong AI products need the same stakeholder alignment, success metrics, and user-centered decision-making as any product lifecycle.',
+  },
+  {
+    title: 'What AI adds',
+    body: 'AI introduces data strategy, model selection, evaluation design, bias checks, confidence calibration, and monitoring for model or data drift. The feedback loop changes because the model itself may need to be retrained or re-prompted.',
+  },
+  {
+    title: 'Where I focus',
+    body: 'The highest-risk gaps are often evaluation design, bias audits, monitoring, and retraining loops. That is where research can turn probabilistic behavior into evidence teams can trust and act on.',
+  },
+];
+
+const outcomes = [
+  {
+    title: 'Clearer problem-model fit',
+    body: 'Define when AI is the right tool, what success means, and where failure would be unacceptable.',
+  },
+  {
+    title: 'Evaluation teams can act on',
+    body: 'Turn probabilistic outputs into rubrics, quality thresholds, and decision-ready evidence.',
+  },
+  {
+    title: 'Trust-centered product decisions',
+    body: 'Design for confidence, explanations, human control, and responsible use from the start.',
+  },
+  {
+    title: 'A stronger post-launch loop',
+    body: 'Monitor drift, user feedback, and model behavior so the product keeps learning after release.',
+  },
+];
+---
+
+<Layout
+  title="Process | michelle.research"
+  description="Michelle's Triple Diamond and Google PAIR research process for AI product development."
+>
+  <main class="process-page">
+    <section class="process-hero" aria-labelledby="process-title">
+      <div class="hero-copy">
+        <p class="eyebrow">My Process</p>
+        <h1 id="process-title">From Triple Diamond to Triple Diamond + P.A.I.R.</h1>
+        <p>
+          Building AI products that matter doesn't happen in a vacuum. It happens when rigorous product design meets
+          human-centered AI principles, ensuring user trust and system accuracy.
+        </p>
+      </div>
+      <aside class="hero-note" aria-label="Process summary">
+        <span>GOOGLE P.A.I.R</span>
+        <p>
+          People + AI Research is a set of design principles created by Google to help developers and designers build
+          human-centered AI products.
+        </p>
+      </aside>
+    </section>
+
+    <section class="framework-section" aria-labelledby="framework-title">
+      <div class="section-header">
+        <p class="eyebrow">Framework</p>
+        <h2 id="framework-title">Three diamonds, one responsible AI layer.</h2>
+        <p>
+          Click through each diamond to see how transferable UX research skills combine with AI product research
+          practices.
+        </p>
+      </div>
+      <PairTripleDiamondDraft />
+    </section>
+
+    <section class="comparison-section" aria-labelledby="comparison-title">
+      <div class="section-header">
+        <p class="eyebrow">Why This Matters</p>
+        <h2 id="comparison-title">AI product development needs more than a traditional product loop.</h2>
+      </div>
+      <div class="comparison-grid">
+        {lifecycleComparisons.map((item) => (
+          <article class="comparison-card">
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="outcomes-section" aria-labelledby="outcomes-title">
+      <div>
+        <p class="eyebrow">What This Unlocks</p>
+        <h2 id="outcomes-title">AI products teams can trust, measure, and improve.</h2>
+      </div>
+      <ul class="outcome-list">
+        {outcomes.map((outcome) => (
+          <li>
+            <h3>{outcome.title}</h3>
+            <p>{outcome.body}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .process-page {
+    width: min(1280px, calc(100vw - 96px));
+    margin: 0 auto;
+    padding: 80px 0 112px;
+  }
+
+  .process-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: 64px;
+    align-items: end;
+    padding: 38px 0 64px;
+    border-bottom: 1px solid var(--mr-rule);
+  }
+
+  .eyebrow {
+    margin: 0 0 10px;
+    color: var(--mr-cta);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin: 0;
+    color: var(--mr-heading);
+    font-family: var(--font-display);
+    font-size: clamp(52px, 8vw, 102px);
+    line-height: 0.98;
+    letter-spacing: 0;
+  }
+
+  .hero-copy > p:last-child {
+    max-width: 760px;
+    margin: 22px 0 0;
+    color: var(--mr-text);
+    font-size: 21px;
+    line-height: 1.55;
+  }
+
+  .hero-note {
+    padding: 28px;
+    border: 1px solid rgba(63, 42, 82, 0.18);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.42);
+  }
+
+  .hero-note span {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--mr-cta);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+  }
+
+  .hero-note p {
+    margin: 0;
+    color: rgba(58, 45, 52, 0.74);
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .framework-section,
+  .comparison-section,
+  .outcomes-section {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--mr-rule);
+  }
+
+  .framework-section {
+    display: grid;
+    gap: 28px;
+  }
+
+  .section-header {
+    max-width: 780px;
+  }
+
+  .section-header h2,
+  .outcomes-section h2 {
+    margin: 0;
+    color: var(--mr-heading);
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.05;
+  }
+
+  .section-header p:not(.eyebrow) {
+    max-width: 660px;
+    margin: 14px 0 0;
+    color: rgba(58, 45, 52, 0.72);
+    font-size: 18px;
+    line-height: 1.55;
+  }
+
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 30px;
+  }
+
+  .comparison-card {
+    border: 1px solid rgba(63, 42, 82, 0.18);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.48);
+  }
+
+  .comparison-card {
+    padding: 26px;
+  }
+
+  .comparison-card h3 {
+    margin: 0;
+    color: var(--mr-heading);
+    font-family: var(--font-display);
+    font-size: 26px;
+    line-height: 1.15;
+  }
+
+  .comparison-card p {
+    margin: 14px 0 0;
+    color: rgba(58, 45, 52, 0.74);
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .outcome-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .outcomes-section {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 48px;
+    align-items: start;
+    border-bottom: 0;
+  }
+
+  .outcome-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .outcome-list li {
+    min-height: 150px;
+    padding: 20px;
+    border: 1px solid rgba(163, 81, 57, 0.28);
+    border-radius: 8px;
+    background: rgba(163, 81, 57, 0.07);
+  }
+
+  .outcome-list h3 {
+    margin: 0;
+    color: var(--mr-heading);
+    font-family: var(--font-display);
+    font-size: 24px;
+    line-height: 1.12;
+  }
+
+  .outcome-list p {
+    margin: 12px 0 0;
+    color: rgba(58, 45, 52, 0.74);
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  @media (max-width: 1040px) {
+    .process-page {
+      width: min(100% - 48px, 960px);
+    }
+
+    .process-hero,
+    .outcomes-section {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .comparison-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .process-page {
+      width: min(100% - 32px, 1280px);
+      padding: 32px 0 72px;
+    }
+
+    .process-hero {
+      padding: 28px 0 48px;
+    }
+
+    .framework-section,
+    .comparison-section,
+    .outcomes-section {
+      padding: 44px 0;
+    }
+
+    .hero-copy > p:last-child,
+    .section-header p:not(.eyebrow) {
+      font-size: 17px;
+    }
+
+    .outcome-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
