@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Writing | michelle.research"
+  description="Writing by Michelle Research."
+>
+  <main class="simple-page">
+    <section class="simple-card" aria-labelledby="writing-title">
+      <p class="eyebrow">Writing</p>
+      <h1 id="writing-title">Writing</h1>
+      <p>Coming soon — essays and field notes on UX research, AI, and human-centered systems.</p>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .simple-page {
+    width: min(1100px, calc(100vw - 48px));
+    margin: 0 auto;
+    padding: 72px 0 96px;
+  }
+
+  .simple-card {
+    max-width: 760px;
+    border: 1px solid var(--mr-rule);
+    background: var(--mr-surface);
+    padding: 48px;
+  }
+
+  .eyebrow {
+    margin: 0 0 12px;
+    color: var(--mr-heading);
+    font-family: var(--font-mono);
+    font-size: var(--fs-small);
+    line-height: var(--lh-small);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  h1 {
+    margin: 0 0 16px;
+    font-size: var(--fs-h2);
+    line-height: var(--lh-h2);
+  }
+
+  p {
+    margin: 0;
+    max-width: 56ch;
+  }
+</style>
