@@ -10,6 +10,11 @@ methods:
   - AI Research
   - Document Processing
   - Factorial Evaluation Framework
+researchApproach: Applied AI
+methodologyTags:
+  - AI Model Evaluation
+  - AI Product Evaluation
+  - AI/Document Processing
 role: Researcher / Builder
 sample: Evaluation framework design in progress
 team: Solo sandbox initiative

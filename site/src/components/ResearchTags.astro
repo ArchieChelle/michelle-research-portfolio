@@ -1,0 +1,58 @@
+---
+// Pill row for a case study's research classification.
+// One emphasized "approach" pill (Quantitative / Qualitative / Mixed Method /
+// Applied AI) followed by outlined methodology pills.
+//
+// Theming: hosts set --rt-* custom properties on a wrapping element; they
+// inherit into this component's scoped styles. Fallbacks keep it usable
+// unstyled. See CaseStudyLayout / WorkGrid / projects index for examples.
+interface Props {
+  approach?: string;
+  tags?: string[];
+}
+
+const { approach, tags = [] } = Astro.props as Props;
+const hasContent = Boolean(approach) || tags.length > 0;
+---
+
+{hasContent && (
+  <ul class="research-tags" aria-label="Research approach and methods">
+    {approach && <li class="rt-pill rt-approach">{approach}</li>}
+    {tags.map((tag) => (
+      <li class="rt-pill rt-method">{tag}</li>
+    ))}
+  </ul>
+)}
+
+<style>
+  .research-tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--rt-gap, 8px);
+    margin: var(--rt-margin, 0);
+    padding: 0;
+  }
+
+  .rt-pill {
+    font-family: var(--rt-font, inherit);
+    font-size: var(--rt-font-size, 12px);
+    line-height: 1;
+    padding: 7px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  .rt-approach {
+    background: var(--rt-approach-bg, #2b2b2b);
+    color: var(--rt-approach-fg, #ffffff);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .rt-method {
+    background: var(--rt-method-bg, transparent);
+    color: var(--rt-method-fg, currentColor);
+    border: 1px solid var(--rt-method-border, rgba(0, 0, 0, 0.18));
+  }
+</style>

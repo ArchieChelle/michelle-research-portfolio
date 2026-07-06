@@ -11,6 +11,10 @@ methods:
   - Feature Usefulness Survey
   - Tier-Fit Analysis
   - Survey Design
+researchApproach: Quantitative
+methodologyTags:
+  - Feature Usefulness Survey
+  - Tier-Fit Analysis
 role: UX Researcher
 sample: n=250 SE Play users via in-product Qualtrics intercept
 team: Sales Director, Price Valuation Team, Product, Research
