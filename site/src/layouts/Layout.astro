@@ -5,9 +5,11 @@ import Nav from '../components/Nav.astro';
 interface Props {
   title: string;
   description?: string;
+  /** Homepage renders its own bespoke header/footer; suppress the shared Nav. */
+  hideChrome?: boolean;
 }
 
-const { title, description = 'Michelle Ruth Exantus — UX Researcher' } = Astro.props;
+const { title, description = 'Michelle Ruth Exantus — UX Researcher', hideChrome = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -20,7 +22,7 @@ const { title, description = 'Michelle Ruth Exantus — UX Researcher' } = Astro
     <title>{title}</title>
   </head>
   <body>
-    <Nav />
+    {!hideChrome && <Nav />}
     <slot />
   </body>
 </html>

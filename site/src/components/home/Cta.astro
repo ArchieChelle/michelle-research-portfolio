@@ -1,0 +1,135 @@
+---
+// exvia CTA: dark full-bleed band. The design uses a blurred portrait with a
+// sharp cutout window; the structure pass uses a dark gradient + placeholder
+// frame until portrait assets land in the brand pass.
+const values = ['CREATIVITY', 'MISSION-FOCUSED', 'OWNERSHIP', 'SYSTEMS-THINKING'];
+---
+
+<section class="x-cta" id="contact" aria-labelledby="x-cta-title">
+  <div class="x-cta-copy">
+    <h2 id="x-cta-title">
+      Research that moves product forward with humanity, trust, and collaboration.
+    </h2>
+    <a class="x-cta-button" href="/contact">CONTACT</a>
+  </div>
+
+  {/* BRAND PASS: replace with blurred-portrait background + sharp cutout window */}
+  <div class="x-cta-window" aria-hidden="true">
+    <span class="x-cta-plus">+</span>
+  </div>
+
+  <ul class="x-cta-values" aria-label="Values">
+    {values.map((value) => (
+      <li>{value}</li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .x-cta {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 92svh;
+    padding: 48px 24px 32px;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at 60% 45%, #3a3a3a 0%, transparent 55%),
+      #1c1c1c;
+  }
+
+  .x-cta-copy {
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+  }
+
+  .x-cta-copy h2 {
+    margin: 0;
+    color: var(--x-on-dark);
+    font-family: var(--x-font-head);
+    font-size: clamp(28px, 3.4vw, 44px);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+  }
+
+  .x-cta-button {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 28px;
+    padding: 10px 18px;
+    border-radius: 6px;
+    background: var(--x-on-dark);
+    color: var(--x-ink);
+    font-family: var(--x-font-mono);
+    font-size: 12px;
+    letter-spacing: .12em;
+    line-height: 1;
+    text-decoration: none;
+    transition: transform var(--dur-fast) var(--ease);
+  }
+
+  .x-cta-button:hover {
+    transform: translateY(-2px);
+  }
+
+  .x-cta-window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: grid;
+    place-items: center;
+    width: min(271px, 60vw);
+    height: 368px;
+    transform: translate(-50%, -46%);
+    border: 1px solid rgba(255, 255, 255, .35);
+    border-radius: 2px;
+    background: rgba(255, 255, 255, .05);
+  }
+
+  .x-cta-plus {
+    color: var(--x-on-dark);
+    font-family: var(--x-font-mono);
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  .x-cta-values {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin: auto 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .x-cta-values li {
+    color: var(--x-on-dark-dim);
+    font-family: var(--x-font-mono);
+    font-size: 12px;
+    letter-spacing: .12em;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 760px) {
+    .x-cta {
+      min-height: auto;
+      gap: 48px;
+      padding: 40px 16px 28px;
+    }
+
+    .x-cta-window {
+      position: static;
+      transform: none;
+      height: 280px;
+      margin: 0 auto;
+    }
+
+    .x-cta-values {
+      flex-wrap: wrap;
+      gap: 12px 20px;
+    }
+  }
+</style>

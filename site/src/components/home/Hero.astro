@@ -1,0 +1,121 @@
+---
+// exvia hero: full-bleed moving-blob video behind a roles row and the
+// giant slab wordmark pinned to the bottom edge.
+const roles = [
+  'MIXED-METHOD RESEARCHER',
+  'PRODUCT STRATEGIST',
+  'HUMAN-CENTERED TECHNOLOGIST',
+  'DATA SCIENTIST',
+];
+---
+
+<section class="x-hero" aria-label="Introduction">
+  <video
+    class="x-hero-video"
+    src="/videos/hero-blob.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    aria-hidden="true"
+  ></video>
+
+  <ul class="x-hero-roles" aria-label="Roles">
+    {roles.map((role) => (
+      <li>{role}</li>
+    ))}
+  </ul>
+
+  <h1 class="x-hero-wordmark">Michelle Exantus</h1>
+</section>
+
+<style>
+  .x-hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: calc(100svh - 68px);
+    overflow: hidden;
+    background: var(--x-bg-soft);
+  }
+
+  .x-hero-video {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .x-hero-roles {
+    position: absolute;
+    top: 34%;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 0;
+    padding: 0 24px;
+    list-style: none;
+  }
+
+  .x-hero-roles li {
+    color: var(--x-ink);
+    font-family: var(--x-font-mono);
+    font-size: 13px;
+    letter-spacing: .12em;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .x-hero-wordmark {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 -0.04em;
+    color: var(--x-ink);
+    /* BRAND PASS: stand-in slab face; swap via --x-font-slab */
+    font-family: var(--x-font-slab);
+    font-size: clamp(44px, 12vw, 190px);
+    font-weight: 800;
+    letter-spacing: .01em;
+    line-height: .92;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 760px) {
+    .x-hero {
+      min-height: 82svh;
+    }
+
+    .x-hero-roles {
+      position: static;
+      order: -1;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 12px 20px;
+      padding: 28px 16px 0;
+    }
+
+    .x-hero-roles li {
+      font-size: 11px;
+    }
+
+    .x-hero-wordmark {
+      white-space: normal;
+      font-size: clamp(40px, 15vw, 88px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .x-hero-video {
+      display: none;
+    }
+  }
+</style>

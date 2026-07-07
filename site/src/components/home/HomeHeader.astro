@@ -1,0 +1,113 @@
+---
+// exvia navbar (Figma node 5:74): logo mark left, links dead-center (64px gap),
+// CONTACT button right. White bar, 20px/24px padding, Geist Mono 12px caps.
+const navLinks = [
+  { href: '/', label: 'HOME' },
+  { href: '/about', label: 'ABOUT' },
+  { href: '/work', label: 'WORK' },
+  { href: '/writing', label: 'BLOG' },
+];
+---
+
+<header class="x-header">
+  <nav class="x-header-nav" aria-label="Main navigation">
+    <div class="x-header-spacer" aria-hidden="true"></div>
+
+    <ul class="x-header-links">
+      {navLinks.map((link) => (
+        <li><a href={link.href}>{link.label}</a></li>
+      ))}
+    </ul>
+
+    <a class="x-header-contact" href="/contact">CONTACT</a>
+  </nav>
+</header>
+
+<style>
+  .x-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--x-bg);
+  }
+
+  .x-header-nav {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    width: min(1280px, 100%);
+    margin: 0 auto;
+    padding: 20px 24px;
+  }
+
+  .x-header-links {
+    display: flex;
+    gap: 64px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .x-header-links a {
+    color: var(--x-ink);
+    font-family: var(--x-font-mono);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1.2px;
+    line-height: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: opacity var(--dur-fast) var(--ease);
+  }
+
+  .x-header-links a:hover {
+    opacity: .55;
+  }
+
+  .x-header-contact {
+    justify-self: end;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background: var(--x-bg);
+    color: var(--x-ink);
+    font-family: var(--x-font-mono);
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    line-height: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background var(--dur-fast) var(--ease);
+  }
+
+  .x-header-contact:hover {
+    background: var(--x-bg-soft);
+  }
+
+  @media (max-width: 860px) {
+    .x-header-nav {
+      padding: 14px 16px;
+    }
+
+    .x-header-links {
+      gap: 24px;
+    }
+
+    .x-header-links a,
+    .x-header-contact {
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .x-header-nav {
+      grid-template-columns: auto 1fr auto;
+      gap: 16px;
+    }
+
+    .x-header-links {
+      justify-content: center;
+      gap: 16px;
+    }
+  }
+</style>
