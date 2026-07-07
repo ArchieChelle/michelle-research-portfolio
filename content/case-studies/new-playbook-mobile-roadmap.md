@@ -5,14 +5,16 @@ status: draft
 methods: Generative Research, Stakeholder Interviews, Vision Workshop, Kano Survey, Roadmap Prioritization
 industry: Sports Technology
 client: NBCUniversal - SportsEngine
-timeline: 8 weeks
+timeline: 12 weeks
 hero_image: ../../assets/case-study-heroes/new-playbook-mobile-roadmap.jpg
-last_updated: 2026-04-28
+last_updated: 2026-07-07
 ---
 
 # Aligning Stakeholders and Prioritizing Mobile Roadmap Concepts
 
-> **Outcome:** Reduced 13 competing SportsEngine Mobile concepts to 5 strategic roadmap investments, giving leadership a clearer evidence base for resourcing and prioritization.
+> *"The mobile roadmap did not need more ideas. It needed shared decision criteria."*
+
+> **Outcome:** Reduced 13 competing SportsEngine Mobile concepts to 5 funded roadmap investments, concentrating 2023 engineering capacity on the features users rated most important.
 
 ---
 
@@ -21,11 +23,11 @@ last_updated: 2026-04-28
 | | |
 |---|---|
 | **Role** | Lead UX Researcher |
-| **Methods** | 18 executive stakeholder interviews; cross-functional vision workshop; Kano survey; prioritization matrix |
-| **Sample** | 18 stakeholder interviews; Kano survey n=201; recruitment details [TO FILL] |
-| **Study design** | 8-week mixed-methods roadmap prioritization study connecting executive themes, workshop concepts, and user satisfaction signals |
-| **Team** | Product; Engineering; Analytics; UX; Senior Leadership; 5 cross-functional teams |
-| **Outcome** | 13 concepts narrowed to 5 strategic investments; leadership expanded resources [TO FILL: headcount or investment detail] |
+| **Methods** | 18 internal stakeholder interviews; cross-functional vision workshop; Kano survey; prioritization matrix |
+| **Sample** | 18 internal stakeholder interviews (internal stakeholder pool across SportsEngine); Kano survey n=201, recruited via Intellizoom panel, in-app mobile intercept, internal employee network, and club/org network |
+| **Study design** | 12-week mixed-methods roadmap prioritization study connecting executive themes, workshop concepts, and user satisfaction signals |
+| **Team** | Product; Engineering; Analytics; UX; Senior Leadership; 5 cross-functional workshop teams |
+| **Outcome** | 13 concepts narrowed to 5 funded investments; 2023 engineering capacity concentrated on Direct Message, notification controls, and team-fee payments, with 8 concepts deferred |
 
 ---
 
@@ -43,106 +45,113 @@ The research question was direct: which mobile concepts should SportsEngine prio
 
 ## Approach
 
-I led an 8-week mixed-methods initiative that moved from strategic alignment to concept generation to user validation. Each method answered a different decision need.
+I led a mixed-methods initiative that moved from strategic alignment to concept generation to user validation. Each method answered a different decision need.
 
-- **Executive stakeholder interviews** - I interviewed 18 stakeholders to surface the strategic intent behind each candidate direction. This created the source material for shared roadmap criteria rather than letting individual preferences compete informally.
-- **Thematic synthesis** - I translated stakeholder input into 5 strategic themes. The exact theme names and source evidence should be restored from the synthesis board before publication.
-- **Cross-functional vision workshop** - I facilitated alignment across 5 teams, converting themes into feature concepts the team could evaluate. The workshop made the roadmap discussion more concrete by moving from abstract ambition to testable concepts.
-- **Kano survey** - I used a Kano survey with 201 participants to quantify satisfaction impact and classify concepts by how users reacted to their presence or absence. The deck should not mix Kano language with Best-Worst Counts or Share of Preference unless the original instrument confirms both methods were used.
-- **Prioritization matrix** - I connected Kano result, user priority, feasibility, and strategic fit so the final 5 concepts were not selected from user appeal alone.
+- **Internal stakeholder interviews** - I interviewed 18 stakeholders from across SportsEngine to surface the strategic intent behind each candidate direction. This created the source material for shared roadmap criteria rather than letting individual preferences compete informally.
+- **Thematic synthesis** - Interview themes clustered into six areas: team admin/rostering and engaging households at signup; communication (chat and notifications); who mobile is designed for (team, household, or individual); engagement/social; collecting payment; and account/profile management. These themes fed directly into the workshop's five concept tracks.
+- **Cross-functional vision workshop** - Held over two days in the Minnesota office (November 15–16, 2022), the workshop split attendees into five teams — Communication, Payment, Onboarding, Scheduling, and Sharing/Video-Social — each converting the interview themes into concrete feature concepts. The Sharing/Video-Social track was deprioritized before concepts moved into the survey, since the team judged it out of scope for this roadmap cycle.
+- **Kano survey** - I ran a Kano survey with 201 participants (recruited via Intellizoom, in-app mobile intercept, internal network, and club/org network; screened on youth-sports participation and current app usage) across the 13 remaining concepts to quantify satisfaction impact and rank them by importance.
+- **Prioritization matrix** - Because 12 of the 13 concepts classified as Attractive, I treated each concept's self-stated importance score — not its Kano label — as the primary ranking signal, then weighed that ranking against the existing 2023 roadmap sequence (Chat → Notifications → In-app/Sponsored Content → Payments) to separate the 5 funded investments from the 8 deferrals.
 
 > **Study design specs**
 >
-> **Research question:** Which SportsEngine Mobile roadmap concepts should leadership prioritize, and how should stakeholder vision, user satisfaction, feasibility, and strategic fit shape that decision?
+> **Research question:** Which SportsEngine Mobile roadmap concepts should leadership prioritize, and how should stakeholder vision, user satisfaction, and roadmap feasibility shape that decision?
 >
-> **Population:** SportsEngine Mobile users and internal stakeholders. Exact user population definition [TO FILL].
+> **Population:** SportsEngine Mobile users (youth/recreational sports families) and internal cross-functional stakeholders across Product, Engineering, Analytics, UX, and Senior Leadership.
 >
-> **Sample:** 18 executive stakeholder interviews; Kano survey n=201. Recruitment source, screener, and segment cuts [TO FILL].
+> **Sample:** 18 internal stakeholder interviews; Kano survey n=201, recruited via Intellizoom panel, in-app mobile intercept, internal employee network, and club/org network. The screener confirmed the respondent's child participated in youth sports and captured which apps they currently use to manage their sports life.
 >
 > **Method:** Mixed-methods roadmap prioritization using stakeholder interviews, thematic synthesis, workshop facilitation, and Kano classification.
 >
-> **Metric:** Kano category by concept, plus prioritization criteria across Kano result, user priority, feasibility, and strategic fit. Scoring weights [TO FILL].
+> **Metric:** Kano class per concept (Must-have, Performance, Attractive, or Indifferent), assigned via continuous analysis of mean functional, dysfunctional, and importance scores. Because the classification did not separate the concepts, the importance score (0–7 scale) carried the ranking.
 >
-> **Instrument detail:** Functional and dysfunctional Kano question pair examples [TO FILL].
+> **Instrument:** Example item (In-App Content) — *Functional:* "If your sport management app provided tools, content, and training to help you get the most of the season, how would you feel?" (I like it / I expect it / I'm neutral / I can live with it / I dislike it). *Dysfunctional:* the same question posed for the feature's absence. *Importance:* "How important is having [feature] on your sports management app?" (7-point scale, not at all → extremely important).
 >
-> **QA and thresholds:** Response cleaning rules, questionable/reverse response handling, classification thresholds, and segment cuts [TO FILL].
+> **Analysis:** Both a discrete (count-based) and a continuous (mean-based) analysis were run; the continuous analysis drove the final interpretation. Segment-level cuts were out of scope this round, so the ranking reads as a whole-sample signal rather than a segmented one.
 >
-> **Limitation:** If most concepts classify as Attractive, the result requires distribution detail, segment differences, or threshold explanation before treating the rankings as strongly differentiated.
+> **Limitation:** 12 of 13 concepts classified as Attractive, with only Chat Polling landing as Indifferent. Because the Kano class alone did not separate the concepts, the self-stated importance score (range 3.38–5.68) carried the differentiation and became the primary ranking input.
 
 ## Findings
 
 ### Finding 1: The roadmap needed shared decision criteria before it needed more ideas
 
-The stakeholder interviews clarified that the mobile roadmap challenge was not ideation volume. It was alignment. Executive vision needed validation against user priorities before the team could commit resources with confidence.
+The stakeholder interviews clarified that the mobile roadmap challenge was not ideation volume. It was alignment. Executive vision needed validation against user priorities before the team could commit resources with confidence. One recurring stakeholder sentiment: "SE Mobile doesn't have a unique value proposition."
 
-The interviews surfaced 5 strategic themes, which became the bridge between leadership intent and workshop output. That bridge is the heart of the case: it shows how qualitative synthesis moved into product concepts instead of remaining as a theme list.
+The interviews surfaced themes that became the bridge between leadership intent and workshop output. That bridge is the heart of the case: it shows how qualitative synthesis moved into product concepts instead of remaining as a theme list.
 
 | Stakeholder theme | Evidence signal | Workshop concept | Decision question |
 |---|---|---|---|
-| [TO FILL: Theme 1] | [TO FILL: stakeholder quote or pattern] | [TO FILL: concept] | Does this advance the mobile strategy? |
-| [TO FILL: Theme 2] | [TO FILL: stakeholder quote or pattern] | [TO FILL: concept] | Does this solve a priority user need? |
-| [TO FILL: Theme 3] | [TO FILL: stakeholder quote or pattern] | [TO FILL: concept] | Can the team execute it within roadmap constraints? |
-| [TO FILL: Theme 4] | [TO FILL: stakeholder quote or pattern] | [TO FILL: concept] | Does it differentiate the mobile experience? |
-| [TO FILL: Theme 5] | [TO FILL: stakeholder quote or pattern] | [TO FILL: concept] | Does it justify investment now? |
+| Payment friction | "The most important thing that we don't allow people to do in the app is to allow parents to pay invoices." | Team 2: Payment — register/pay for programs, purchase equipment, pay team fees, cover travel costs | Does this solve a priority user need? |
+| Fragmented communication | Stakeholders flagged chat attachment bugs and inconsistent notification controls (silencing, push delivery). | Team 1: Communication — direct/group messaging, chat polling, notification controls | Does this advance the mobile strategy? |
+| Admin and scheduling overhead | "Managing multiple schedules" and rostering came up repeatedly as a household pain point. | Team 4: Scheduling — carpooling and task reminders with iconography/color visualization | Can the team execute it within roadmap constraints? |
+| Onboarding friction | "A lot of features of HQ don't work well in mobile," plus gaps in eligibility and registration completion tracking. | Team 3: Onboarding — integrated sign-up/registration, QR-code entry, quick account creation | Does it justify investment now? |
+| Undifferentiated engagement value | Concern that the workshop themes "reflect current scope" and "may not be innovative enough to make us a differentiator." | Team 5: Sharing/Video-Social — ultimately deprioritized before the concepts reached the survey | Does it differentiate the mobile experience? |
 
 ### Finding 2: The workshop turned broad themes into concepts the team could test
 
 The vision workshop made the strategy operational. Product, engineering, analytics, UX, and leadership moved from broad themes into feature concepts that could be evaluated in a survey and discussed against feasibility.
 
-That transformation matters because it prevents a common roadmap failure: validating ideas that were never clearly connected to the original strategic problem. The workshop created the traceability from theme to concept to prioritization decision.
+That transformation matters because it prevents a common roadmap failure: validating ideas that were never clearly connected to the original strategic problem. The workshop created the traceability from theme to concept to prioritization decision — and it was also where Sharing/Video-Social was cut before it consumed further research budget, keeping the Kano survey focused on the 13 concepts leadership actually needed to decide on.
 
-### Finding 3: Kano clarified satisfaction impact, but the results needed method guardrails
+### Finding 3: Kano clarified satisfaction impact using a 4-category model
 
-The Kano survey gave the team a structured way to understand how each concept could affect user satisfaction. The method was appropriate because the decision was not simply "which feature is most popular?" It was "which concepts create delight, meet expectations, or fail to move satisfaction enough to justify investment?"
+The Kano survey gave the team a structured way to understand how each concept could affect user satisfaction. The method fit the decision because the question was not "which feature is most popular?" It was "which concepts create delight, meet expectations, or fail to move satisfaction enough to justify investment?"
 
-The tracker flags a credibility risk: the deck appears to mix Kano terminology with Best-Worst Counts and Share of Preference language. The revised case should keep the method language internally consistent unless the original survey confirms that both Kano and MaxDiff were used.
+The study classified concepts into four categories — Must-have (Required), Performance (Desired), Attractive (Delighter), and Indifferent (Neutral) — using continuous analysis of the mean functional, dysfunctional, and importance scores.
 
-| Kano element | What to show | Evidence status |
-|---|---|---|
-| Functional question | "How would you feel if this feature were available?" | [TO FILL: exact survey item] |
-| Dysfunctional question | "How would you feel if this feature were not available?" | [TO FILL: exact survey item] |
-| Classification logic | Attractive, One-dimensional, Must-be, Indifferent, Reverse, Questionable | [TO FILL: classification table or rules] |
-| QA rules | Remove low-quality, contradictory, or questionable responses | [TO FILL: response cleaning criteria] |
-| Segment cuts | Compare classification patterns by meaningful user group | [TO FILL: segment definitions] |
+| Survey element | Instrument |
+|---|---|
+| Functional question | "If your sport management app provided [feature], how would you feel?" (5-point: like it → dislike it) |
+| Dysfunctional question | "If your sport management app did NOT provide [feature], how would you feel?" (same 5-point scale) |
+| Importance question | "How important is having [feature] on your sports management app?" (7-point scale) |
+| Classification | 4-category model: Must-have, Performance, Attractive, Indifferent |
+| Analysis | Continuous analysis (mean functional/dysfunctional/importance scores), with a discrete count-based pass run as a cross-check |
 
 ### Finding 4: The final decision logic narrowed 13 concepts to 5 investments
 
-The strongest decision was the narrowing itself: 13 possible concepts became 5 strategic investments. That outcome is credible when the case shows the criteria behind the choice.
+The strongest decision was the narrowing itself: 13 possible concepts became 5 funded investments. With the Kano class near-uniform, the importance score did the separating — and the top five were then weighed against the existing 2023 roadmap sequence (Chat → Notifications → In-app/Sponsored Content → Payments) to set near-term priority.
 
-Kano results should be one input, not the whole decision. The final prioritization needs to show how user satisfaction signals intersected with user priority, feasibility, and strategic fit.
+| Concept | Theme | Kano class | Importance (0–7) | Roadmap priority |
+|---|---|---|---|---|
+| Direct Message | Chat | Attractive | 5.68 | High |
+| Notifications – What | Notifications | Attractive | 5.42 | High |
+| Notifications – How | Notifications | Attractive | 5.36 | High |
+| Paying Team Fees | Payments | Attractive | 5.21 | High |
+| Notifications – When | Notifications | Attractive | 5.09 | Medium |
+| In-App Content | Content | Attractive | 4.81 | Defer |
+| Buying Team Gear | Payments | Attractive | 4.77 | Defer |
+| Sending & Requesting Money | Payments | Attractive | 4.66 | Defer |
+| Purchasing Equipment | Payments | Attractive | 4.62 | Defer |
+| Register & Pay for Program | Onboarding | Attractive | 4.55 | Defer |
+| Travel-Related Fees | Payments | Attractive | 4.54 | Defer |
+| Group Message | Chat | Attractive | 3.77 | Defer |
+| Chat Polling | Chat | Indifferent | 3.38 | Defer (omit) |
 
-| Concept | Kano result | User priority | Feasibility | Strategic fit | Decision |
-|---|---|---|---|---|---|
-| [TO FILL: prioritized concept 1] | [TO FILL] | [TO FILL] | [TO FILL] | [TO FILL] | Invest |
-| [TO FILL: prioritized concept 2] | [TO FILL] | [TO FILL] | [TO FILL] | [TO FILL] | Invest |
-| [TO FILL: prioritized concept 3] | [TO FILL] | [TO FILL] | [TO FILL] | [TO FILL] | Invest |
-| [TO FILL: prioritized concept 4] | [TO FILL] | [TO FILL] | [TO FILL] | [TO FILL] | Invest |
-| [TO FILL: prioritized concept 5] | [TO FILL] | [TO FILL] | [TO FILL] | [TO FILL] | Invest |
-| [TO FILL: deprioritized concept] | [TO FILL] | [TO FILL] | [TO FILL] | [TO FILL] | Deprioritize |
+The funded five sit above the 5.09 line; the remaining eight were deferred to later iterations. A formal feasibility/viability assessment (technology feasibility × business viability × human-values desirability) was scoped as the next step — this table reflects the user-desirability evidence, Kano class and importance, that drove the initial cut.
 
 ## Impact
 
-- **Roadmap focus:** Reduced 13 competing concepts to 5 strategic investments, directly tied to the prioritization matrix.
-- **Resource decision:** Leadership expanded team resources based on the research-backed direction. [TO FILL: headcount, budget, or investment detail.]
-- **Roadmap discipline:** Deprioritized 8 concepts, giving product and engineering a clearer focus. [TO FILL: effort saved or roadmap cuts.]
-- **Stakeholder confidence:** Created a shared decision frame across Product, Engineering, Analytics, UX, and Senior Leadership.
-- **Next-step ownership:** Converted broad follow-up ideas into a sequenced plan by owner and evidence need.
+- **Concentrated engineering capacity:** Narrowed a 13-concept wishlist to 5 funded investments — Direct Message, Notifications (What/How/When), and Paying Team Fees — focusing 2023 mobile engineering capacity on the highest-importance work instead of spreading it thin.
+- **Roadmap re-sequencing:** The importance ranking elevated notification controls and team-fee payments alongside the roadmap's original Chat-first plan, rather than following the initial Chat → Notifications → Content → Payments order by default.
+- **Roadmap discipline:** Deferred 8 lower-importance concepts (In-App Content, Buying Team Gear, Sending & Requesting Money, Purchasing Equipment, Register & Pay for Program, Travel-Related Fees, Group Message, and Chat Polling), giving Product and Engineering a focused execution list for 2023.
+- **Stakeholder confidence:** Replaced informally competing priorities with a documented, evidence-backed ranking shared across Product, Engineering, Analytics, UX, and Senior Leadership.
+- **Next-step ownership:** Defined clear follow-on work — a formal feasibility/viability matrix, roadmap adjustments, and deeper research on the top 3 highest-risk initiatives.
 
 ## Reflection
 
 The most important methodological choice was sequencing. I did not start with a survey because the team had not yet aligned on what the concepts meant. Stakeholder interviews and workshop synthesis created the shared language that made the Kano survey useful.
 
-The main risk was over-reading the Kano output. If many concepts classify as Attractive, the case needs to explain whether that pattern reflects genuinely strong user enthusiasm, broad concept wording, insufficient differentiation, or missing segment cuts. I would show the classification distribution, questionable response rate, and segment differences before presenting the final 5 as a clean ranking.
+That 12 of 13 concepts classified as Attractive is itself a finding: it points to either genuinely low unmet need across this feature set, or concept wording broad enough to blur real differences in response. Either way, the categorical label could not carry the decision — the importance score, spanning a real range from 3.38 to 5.68, did. I would lead future syntheses with a graded importance signal and treat the Kano class as a supporting lens.
 
-I would also make the theme-to-concept traceability more explicit. The workshop was the conversion point between executive vision and user-tested concepts, so the artifact should show that chain: theme, evidence, concept, and decision criterion.
+I would also make the theme-to-concept traceability more explicit. The workshop was the conversion point between stakeholder themes and user-tested concepts — including the decision to cut Sharing/Video-Social before it reached the survey — so the artifact should show that full chain: theme, evidence, concept, and decision criterion.
 
-Finally, the next-step plan should assign owners. Product can own roadmap sequencing, Engineering can own feasibility sizing, Analytics can own behavioral validation, and Research can own follow-up survey or interview work. That makes the plan executable instead of aspirational.
+Finally, the feasibility/viability matrix scoped as a next step would strengthen the case if folded into the prioritization table. As it stands, the funding decision rests on user importance and existing roadmap sequencing — a defensible basis, and a stronger one still with feasibility and strategic fit scored explicitly alongside the Kano data.
 
 ---
 
 ## Footer
 
-**Project completed:** 2024
+**Project completed:** 2023
 **Want to discuss this work?** [Let's connect ->](#contact)
 
 ---
@@ -151,9 +160,9 @@ Finally, the next-step plan should assign owners. Product can own roadmap sequen
 
 - Hero image: place `new-playbook-mobile-roadmap.jpg` from `/assets/case-study-heroes/` in the hero slot.
 - Section dividers: use a thin Wisteria `#BEAEDB` 1px rule between major sections.
-- Outcome block quote: Newsreader italic, indented, Black Coffee `#3A2D34`.
+- Outcome block quote + top pull quote ("The mobile roadmap did not need more ideas…"): Newsreader italic, indented, Black Coffee `#3A2D34`.
 - Theme-to-concept table: render as a readable mapping table, not as a screenshot; use Jacarta `#3F2A52` headers and Parchment `#EEE9DF` background.
-- Kano method table: render as a rigor callout with Ember `#A35139` labels for Functional, Dysfunctional, QA, and Thresholds.
-- Prioritization matrix: build as a styled table component with the final Decision column highlighted in Ember `#A35139`.
-- Study design specs: callout box with Parchment `#EEE9DF` background, Jacarta `#3F2A52` border, Black Coffee `#3A2D34` body text, and IBM Plex Sans Mono for placeholder/spec values.
-- Pull quote candidate: "The mobile roadmap did not need more ideas. It needed shared decision criteria."
+- Kano method table: render as a rigor callout with Ember `#A35139` labels for the Functional, Dysfunctional, and Importance rows.
+- Prioritization matrix: build as a styled table component with the Roadmap priority column highlighted in Ember `#A35139` (High), with the 5.09 cut line called out visually.
+- Study design specs: callout box with Parchment `#EEE9DF` background, Jacarta `#3F2A52` border, Black Coffee `#3A2D34` body text, and IBM Plex Sans Mono for spec values.
+- **Open item before publishing:** if the original feasibility/viability matrix is located, fold per-concept feasibility and strategic-fit scores into the Finding 4 table.
