@@ -1,12 +1,14 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import ResearchTags from '../../components/ResearchTags.astro';
 
 const projects = [
   {
     label: 'FEATURED',
     title: "The New Playbook: Crafting SportsEngine Mobile's Vision and Value Proposition",
     outcome: 'Narrowed 13 competing features to 5 strategic investments. Directly influenced leadership to expand team resources.',
-    tags: 'Generative Research · Mixed-Methods · End-to-End',
+    approach: 'Mixed Method',
+    methodologyTags: ['Stakeholder Interviews', 'Vision Workshop', 'Kano Survey'],
     slug: '/projects/new-playbook',
     disabled: false,
   },
@@ -14,7 +16,8 @@ const projects = [
     label: 'CASE STUDY',
     title: 'Smart Scaling: MaxDiff Guiding Our API Strategy for ROI',
     outcome: 'Quantified feature value to guide API investment decisions.',
-    tags: 'Strategic Research · Survey · Feature Prioritization',
+    approach: 'Quantitative',
+    methodologyTags: ['MaxDiff', 'Survey Design'],
     slug: '/projects/smart-scaling',
     disabled: false,
   },
@@ -22,7 +25,8 @@ const projects = [
     label: 'CASE STUDY',
     title: 'Evaluating Tier-Feature Fit to Inform SE Play Pricing Strategy',
     outcome: 'Tier recommendations adopted by executives to inform pricing strategy.',
-    tags: 'Evaluative Research · Survey · Feature Prioritization',
+    approach: 'Quantitative',
+    methodologyTags: ['Feature Usefulness Survey', 'Tier-Fit Analysis'],
     slug: '/projects/seplay-pricing',
     disabled: false,
   },
@@ -30,7 +34,8 @@ const projects = [
     label: 'SANDBOX',
     title: 'Tax Intel Pro — AI-Powered Document System',
     outcome: 'End-to-end intelligent document processing pipeline in progress.',
-    tags: 'Sandbox Project · AI · Document Processing',
+    approach: 'Applied AI',
+    methodologyTags: ['AI Model Evaluation', 'AI Product Evaluation', 'AI/Document Processing'],
     slug: '/projects/tax-intel-pro',
     disabled: false,
   },
@@ -38,7 +43,8 @@ const projects = [
     label: 'COMING SOON',
     title: 'ResearchOps',
     outcome: 'Content in progress.',
-    tags: 'ResearchOps',
+    approach: undefined,
+    methodologyTags: [],
     slug: null,
     disabled: true,
   },
@@ -57,9 +63,11 @@ const projects = [
           <div class="card-image" aria-hidden="true"></div>
           <div class="card-body">
             <span class="card-label">{project.label}</span>
-            <p class="card-tags">{project.tags}</p>
             <h2 class="card-title">{project.title}</h2>
             <p class="card-outcome">{project.outcome}</p>
+            <div class="card-research-tags">
+              <ResearchTags approach={project.approach} tags={project.methodologyTags} />
+            </div>
             {!project.disabled && project.slug && (
               <a href={project.slug} class="card-link">View project →</a>
             )}
@@ -134,11 +142,14 @@ const projects = [
     letter-spacing: 0.08em;
   }
 
-  .card-tags {
-    font-family: var(--font-label);
-    font-size: 13px;
-    color: var(--color-wisteria);
-    margin: 0;
+  .card-research-tags {
+    margin: 4px 0 0;
+    --rt-font: var(--font-label);
+    --rt-font-size: 12px;
+    --rt-approach-bg: var(--color-jacarta, #3F2A52);
+    --rt-approach-fg: var(--color-parchment, #EEE9DF);
+    --rt-method-fg: var(--color-wisteria, #7A6A97);
+    --rt-method-border: var(--color-wisteria, #BEAEDB);
   }
 
   .card-title {

@@ -12,6 +12,11 @@ methods:
   - Vision Workshop
   - Kano Survey
   - Roadmap Prioritization
+researchApproach: Mixed Method
+methodologyTags:
+  - Stakeholder Interviews
+  - Vision Workshop
+  - Kano Survey
 role: Lead UX Researcher
 sample: 18 internal stakeholder interviews and Kano survey n=201
 team: Product, Engineering, Analytics, UX, Senior Leadership

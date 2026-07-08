@@ -1,0 +1,400 @@
+---
+// exvia services: "This is What I do" header + 4-row list.
+// Hover mechanic ported from the previous homepage's `approaches` section:
+// row title characters rise while sub-skill pills scatter into view (GSAP).
+// Pills restyled monochrome for the structure pass.
+const splitTitle = (title: string) => title.split(' ').map((word) => Array.from(word));
+
+const services = [
+  {
+    number: '( 1 )',
+    title: 'Product Strategy',
+    words: splitTitle('Product Strategy'),
+    pills: [
+      { label: 'Roadmap Prioritization', x: 16, y: 18, tone: 'line' },
+      { label: 'Feature Scoring', x: 48, y: 8, tone: 'fill' },
+      { label: 'Stakeholder Alignment', x: 34, y: 66, tone: 'ink' },
+      { label: 'Competitive Analysis', x: 68, y: 50, tone: 'line' },
+    ],
+  },
+  {
+    number: '( 2 )',
+    title: 'Human-First Design',
+    words: splitTitle('Human-First Design'),
+    pills: [
+      { label: 'Service Blueprinting', x: 14, y: 16, tone: 'fill' },
+      { label: 'Workflow Redesign', x: 46, y: 8, tone: 'line' },
+      { label: 'Voice of Customer Programs', x: 58, y: 40, tone: 'ink' },
+      { label: 'Experience Metrics', x: 24, y: 68, tone: 'line' },
+    ],
+  },
+  {
+    number: '( 3 )',
+    title: 'UX Research',
+    words: splitTitle('UX Research'),
+    pills: [
+      { label: 'Generative Research', x: 14, y: 14, tone: 'ink' },
+      { label: 'Evaluative Research', x: 44, y: 6, tone: 'line' },
+      { label: 'Survey Design', x: 70, y: 22, tone: 'fill' },
+      { label: 'Usability Testing', x: 28, y: 64, tone: 'line' },
+      { label: 'Stakeholder Interviewing', x: 58, y: 72, tone: 'fill' },
+    ],
+  },
+  {
+    number: '( 4 )',
+    title: 'Consumer Insights',
+    words: splitTitle('Consumer Insights'),
+    pills: [
+      { label: 'Conjoint & Choice Modeling', x: 18, y: 16, tone: 'line' },
+      { label: 'Metrics Design', x: 52, y: 8, tone: 'ink' },
+      { label: 'Insight Synthesis', x: 34, y: 66, tone: 'fill' },
+      { label: 'Python', x: 66, y: 52, tone: 'line' },
+    ],
+  },
+];
+---
+
+<section class="x-services" id="services" aria-labelledby="x-services-title">
+  <div class="x-services-header">
+    <div class="x-services-side">
+      <p class="x-services-eyebrow" id="x-services-title">SERVICES</p>
+      <a class="x-services-seeall" href="/process">SEE ALL</a>
+    </div>
+    <h2 class="x-services-heading" aria-hidden="true">This is<br />What I do</h2>
+  </div>
+
+  <ul class="x-service-list" aria-label="Services and sub-skills">
+    {services.map((service) => (
+      <li class="x-service-item" tabindex="0" data-x-service>
+        <h3 class="x-service-title" aria-label={service.title}>
+          <span class="x-service-title-inner" aria-hidden="true">
+            {service.words.map((word) => (
+              <span class="x-service-word">
+                {word.map((char) => (
+                  <span class="x-service-char">{char}</span>
+                ))}
+              </span>
+            ))}
+          </span>
+        </h3>
+        <span class="x-service-number" aria-hidden="true">{service.number}</span>
+        <div class="x-pill-grid" aria-hidden="true">
+          {service.pills.map((pill) => (
+            <span
+              class:list={['x-pill', `x-tone-${pill.tone}`]}
+              style={`--pill-x: ${pill.x}%; --pill-y: ${pill.y}%;`}
+            >
+              {pill.label}
+            </span>
+          ))}
+        </div>
+        <ul class="sr-only">
+          {service.pills.map((pill) => (
+            <li>{pill.label}</li>
+          ))}
+        </ul>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+
+  const canAnimate =
+    window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (canAnimate) {
+    const items = document.querySelectorAll<HTMLElement>('[data-x-service]');
+
+    items.forEach((item) => {
+      const pills = Array.from(item.querySelectorAll<HTMLElement>('.x-pill'));
+      const chars = Array.from(item.querySelectorAll<HTMLElement>('.x-service-char'));
+
+      gsap.set(pills, { autoAlpha: 0, scale: 0, xPercent: -50, yPercent: -50 });
+
+      const reveal = () => {
+        gsap.killTweensOf([...pills, ...chars]);
+
+        gsap.fromTo(
+          chars,
+          { yPercent: 16, autoAlpha: 0.4 },
+          {
+            yPercent: 0,
+            autoAlpha: 1,
+            duration: 0.4,
+            stagger: 0.012,
+            ease: 'power3.out',
+            overwrite: true,
+          }
+        );
+
+        gsap.to(pills, {
+          autoAlpha: 1,
+          scale: 1,
+          x: () => gsap.utils.random(-8, 10),
+          y: () => gsap.utils.random(-6, 7),
+          duration: 0.36,
+          stagger: 0.035,
+          ease: 'back.out(1.7)',
+          overwrite: true,
+        });
+      };
+
+      const hide = () => {
+        gsap.killTweensOf(pills);
+        gsap.to(pills, {
+          autoAlpha: 0,
+          scale: 0,
+          x: 0,
+          y: 0,
+          duration: 0.24,
+          stagger: 0.018,
+          ease: 'power2.in',
+          overwrite: true,
+        });
+      };
+
+      item.addEventListener('mouseenter', reveal);
+      item.addEventListener('focusin', reveal);
+      item.addEventListener('mouseleave', hide);
+      item.addEventListener('focusout', hide);
+    });
+  }
+</script>
+
+<style>
+  .x-services {
+    width: min(1280px, 100%);
+    margin: 0 auto;
+    padding: 100px 24px 120px;
+    background: var(--x-bg);
+  }
+
+  .x-services-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: 32px;
+    align-items: stretch;
+  }
+
+  .x-services-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .x-services-eyebrow {
+    margin: 0;
+    color: var(--x-ink);
+    font-family: var(--x-font-mono);
+    font-size: 12px;
+    letter-spacing: .14em;
+    line-height: 1;
+  }
+
+  .x-services-seeall {
+    align-self: flex-start;
+    padding: 8px 14px;
+    border-radius: 4px;
+    background: var(--x-bg-dark);
+    color: var(--x-on-dark);
+    font-family: var(--x-font-mono);
+    font-size: 12px;
+    letter-spacing: .12em;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  .x-services-seeall:hover {
+    background: #333;
+  }
+
+  .x-services-heading {
+    margin: 0;
+    color: var(--x-ink);
+    font-family: var(--x-font-head);
+    font-size: clamp(64px, 12vw, 150px);
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+
+  .x-service-list {
+    margin: 96px 0 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--x-rule);
+  }
+
+  .x-service-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--x-rule);
+    cursor: default;
+    outline: none;
+  }
+
+  .x-service-item:focus-visible {
+    outline: 1px solid var(--x-ink);
+    outline-offset: 8px;
+  }
+
+  .x-service-title {
+    margin: 0;
+    color: var(--x-muted);
+    font-family: var(--x-font-head);
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    transition: color var(--dur-normal) var(--ease);
+  }
+
+  .x-service-item:hover .x-service-title,
+  .x-service-item:focus-within .x-service-title {
+    color: var(--x-ink);
+  }
+
+  .x-service-title-inner,
+  .x-service-word,
+  .x-service-char {
+    display: inline-block;
+  }
+
+  .x-service-word {
+    margin-right: .24em;
+    white-space: nowrap;
+  }
+
+  .x-service-word:last-child {
+    margin-right: 0;
+  }
+
+  .x-service-char {
+    will-change: transform, opacity;
+  }
+
+  .x-service-number {
+    flex: 0 0 auto;
+    color: var(--x-body);
+    font-family: var(--x-font-mono);
+    font-size: 13px;
+    letter-spacing: .1em;
+    line-height: 1;
+  }
+
+  .x-pill-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: min(88%, 1040px);
+    height: 240%;
+    transform: translateY(-30%);
+    pointer-events: none;
+  }
+
+  .x-pill {
+    position: absolute;
+    top: var(--pill-y);
+    left: var(--pill-x);
+    display: inline-flex;
+    align-items: center;
+    min-width: max-content;
+    padding: 12px 18px 13px;
+    border-radius: 999px;
+    font-family: var(--x-font-mono);
+    font-size: 13px;
+    line-height: 1;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -50%) scale(0);
+    transform-origin: center;
+    will-change: transform, opacity;
+  }
+
+  .x-tone-line {
+    background: var(--x-bg);
+    border: 1px solid var(--x-ink);
+    color: var(--x-ink);
+  }
+
+  .x-tone-fill {
+    background: var(--x-bg-soft);
+    border: 1px solid var(--x-rule);
+    color: var(--x-ink);
+  }
+
+  .x-tone-ink {
+    background: var(--x-bg-dark);
+    color: var(--x-on-dark);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Touch / reduced-motion fallback: pills render statically under each row. */
+  @media (hover: none), (prefers-reduced-motion: reduce) {
+    .x-service-item {
+      flex-wrap: wrap;
+    }
+
+    .x-service-title {
+      color: var(--x-ink);
+    }
+
+    .x-pill-grid {
+      position: static;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      width: 100%;
+      height: auto;
+      transform: none;
+      order: 3;
+    }
+
+    .x-pill {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      padding: 9px 13px 10px;
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 860px) {
+    .x-services {
+      padding: 64px 16px 80px;
+    }
+
+    .x-services-header {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .x-services-side {
+      gap: 24px;
+    }
+
+    .x-service-list {
+      margin-top: 56px;
+    }
+  }
+</style>

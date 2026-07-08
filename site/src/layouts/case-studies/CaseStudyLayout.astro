@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import ResearchTags from '../../components/ResearchTags.astro';
 
 interface Props {
   entry: {
@@ -11,6 +12,8 @@ interface Props {
       timeline: string;
       client: string;
       methods: string[];
+      researchApproach?: string;
+      methodologyTags?: string[];
       role: string;
       sample: string;
       team: string;
@@ -34,6 +37,9 @@ const data = entry.data;
       <p class="eyebrow">{data.heroLabel}</p>
       <h1>{data.title}</h1>
       <p class="description">{data.description}</p>
+      <div class="cs-research-tags">
+        <ResearchTags approach={data.researchApproach} tags={data.methodologyTags} />
+      </div>
       <blockquote>{data.heroOutcome}</blockquote>
     </section>
 
@@ -77,6 +83,14 @@ const data = entry.data;
   h1 { font-size: clamp(42px, 5vw, 64px); line-height: 1.02; margin: 0 0 16px; }
   h2 { font-family: var(--font-body); font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--mr-cta); margin: 0 0 16px; }
   .description { max-width: 760px; margin: 0 0 18px; color: var(--mr-text); }
+  .cs-research-tags {
+    margin: 0 0 22px;
+    --rt-font: var(--font-mono);
+    --rt-approach-bg: var(--mr-heading);
+    --rt-approach-fg: var(--mr-bg);
+    --rt-method-fg: var(--mr-text);
+    --rt-method-border: var(--mr-rule);
+  }
   blockquote { margin: 0; padding-left: 20px; border-left: 3px solid var(--mr-soft); font-family: var(--font-display); font-style: italic; }
   dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 26px; margin: 0; }
   dt { font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; color: var(--mr-cta); }

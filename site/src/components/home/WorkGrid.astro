@@ -1,0 +1,187 @@
+---
+// exvia case-studies grid: centered eyebrow pill + headline, 2x2 card grid.
+// Card imagery is a neutral placeholder until the brand pass.
+import ResearchTags from '../ResearchTags.astro';
+
+const caseStudies = [
+  {
+    title: 'The New Playbook',
+    description:
+      'Mixed-methods research that evaluated 13 mobile roadmap concepts and aligned stakeholders on 5 high-impact investments.',
+    approach: 'Mixed Method',
+    methodologyTags: ['Stakeholder Interviews', 'Vision Workshop', 'Kano Survey'],
+    href: '/work/new-playbook',
+  },
+  {
+    title: 'Smart Scaling',
+    description:
+      'Strategic research to drive infrastructure user experience and shape platform scaling decisions.',
+    approach: 'Quantitative',
+    methodologyTags: ['MaxDiff', 'Survey Design'],
+    href: '/work/smart-scaling',
+  },
+  {
+    title: 'SE Play Tier-Feature Fit',
+    description:
+      'Pricing research to understand which features matter most at every subscription tier.',
+    approach: 'Quantitative',
+    methodologyTags: ['Feature Usefulness Survey', 'Tier-Fit Analysis'],
+    href: '/work/seplay-pricing',
+  },
+  {
+    title: 'Tax Intel Pro',
+    description:
+      'Discovery research uncovering opportunities for platform growth in a specialized vertical.',
+    approach: 'Applied AI',
+    methodologyTags: ['AI Model Evaluation', 'AI Product Evaluation', 'AI/Document Processing'],
+    href: '/work/tax-intel-pro',
+  },
+];
+---
+
+<section class="x-work" id="work" aria-labelledby="x-work-title">
+  <span class="x-work-pill">Case Studies</span>
+  <h2 class="x-work-heading" id="x-work-title">How research shapes<br />product strategy.</h2>
+
+  <div class="x-work-grid">
+    {caseStudies.map((study) => (
+      <article class="x-work-card">
+        <a href={study.href} aria-label={`Open case study: ${study.title}`}>
+          {/* BRAND PASS: replace placeholder block with case-study imagery */}
+          <div class="x-work-image" aria-hidden="true"></div>
+        </a>
+        <h3><a href={study.href}>{study.title}</a></h3>
+        <p>{study.description}</p>
+        <div class="x-work-tags">
+          <ResearchTags approach={study.approach} tags={study.methodologyTags} />
+        </div>
+        <a class="x-work-more" href={study.href}>Read More</a>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .x-work {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 120px 24px 140px;
+    background: var(--x-bg);
+  }
+
+  .x-work-pill {
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: #e6f0da; /* BRAND PASS: accent pill color */
+    color: var(--x-ink);
+    font-family: var(--x-font-mono);
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  .x-work-heading {
+    max-width: 720px;
+    margin: 24px 0 0;
+    color: var(--x-ink);
+    font-family: var(--x-font-head);
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    text-align: center;
+  }
+
+  .x-work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 376px));
+    gap: 64px 24px;
+    margin-top: 80px;
+  }
+
+  .x-work-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .x-work-card > a {
+    display: block;
+  }
+
+  .x-work-image {
+    height: 400px;
+    border-radius: 12px;
+    background: var(--x-bg-soft);
+    border: 1px solid var(--x-rule);
+    transition: transform var(--dur-normal) var(--ease);
+  }
+
+  .x-work-card > a:hover .x-work-image {
+    transform: translateY(-4px);
+  }
+
+  .x-work-card h3 {
+    margin: 24px 0 0;
+    font-family: var(--x-font-head);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+  }
+
+  .x-work-card h3 a {
+    color: var(--x-ink);
+    text-decoration: none;
+  }
+
+  .x-work-card h3 a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .x-work-card p {
+    max-width: 360px;
+    margin: 8px 0 0;
+    color: var(--x-body);
+    font-family: var(--x-font-head);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .x-work-tags {
+    margin-top: 16px;
+    --rt-font: var(--x-font-mono);
+    --rt-approach-bg: var(--x-ink);
+    --rt-approach-fg: var(--x-on-dark);
+    --rt-method-fg: var(--x-body);
+    --rt-method-border: var(--x-rule);
+  }
+
+  .x-work-more {
+    margin-top: 24px;
+    align-self: flex-start;
+    color: var(--x-ink);
+    font-family: var(--x-font-mono);
+    font-size: 14px;
+    line-height: 1;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+
+  @media (max-width: 860px) {
+    .x-work {
+      padding: 72px 16px 88px;
+    }
+
+    .x-work-grid {
+      grid-template-columns: minmax(0, 420px);
+      gap: 48px;
+      margin-top: 48px;
+    }
+
+    .x-work-image {
+      height: 320px;
+    }
+  }
+</style>

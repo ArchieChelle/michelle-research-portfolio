@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+/* exvia homepage scaffold fonts (structure pass) */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Geist+Mono:wght@400;500&family=Rokkitt:wght@700;800&display=swap');
 
 @import "tailwindcss";
 
@@ -39,6 +41,25 @@
   --dur-fast: 200ms;
   --dur-normal: 350ms;
   --dur-reveal: 600ms;
+
+  /* ------------------------------------------------------------------
+     exvia homepage scaffold tokens (structure pass).
+     Neutral monochrome placeholders — swap values during the brand pass.
+     ------------------------------------------------------------------ */
+  --x-bg: #ffffff;
+  --x-bg-soft: #f4f4f4;
+  --x-bg-dark: #131313;
+  --x-ink: #131313;
+  --x-body: #5d5d5d;
+  --x-muted: #c2c2c2;
+  --x-rule: #e1e1e1;
+  --x-on-dark: #ffffff;
+  --x-on-dark-dim: #9a9a9a;
+
+  --x-font-head: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
+  --x-font-mono: 'Geist Mono', 'IBM Plex Mono', ui-monospace, monospace;
+  /* BRAND PASS: replace stand-in slab with the final wordmark face */
+  --x-font-slab: 'Rokkitt', 'Roboto Slab', serif;
 }
 
 * {

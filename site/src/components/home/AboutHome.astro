@@ -1,0 +1,108 @@
+---
+// exvia about band: mono eyebrow left, bio + stats offset right.
+const stats = [
+  { value: '5', plus: true, label: 'YEARS OF EXPERIENCE' },
+  { value: '40', plus: true, label: 'PROJECTS COMPLETED' },
+  { value: '3', plus: false, label: 'INDUSTRIES' },
+];
+---
+
+<section class="x-about" id="about" aria-labelledby="x-about-title">
+  <p class="x-about-eyebrow" id="x-about-title">ABOUT</p>
+
+  <div class="x-about-body">
+    <p class="x-about-bio">
+      Hi, I&rsquo;m Michelle, a human-centered mixed-methods researcher who builds and
+      executes frameworks (generative, exploratory, and evaluative) that ground product
+      decisions in evidence: whether that means uncovering what to build, understanding
+      how people experience it, or measuring whether it&rsquo;s working.
+    </p>
+
+    <dl class="x-about-stats">
+      {stats.map((stat) => (
+        <div class="x-about-stat">
+          <dd>
+            {stat.value}{stat.plus && <sup>+</sup>}
+          </dd>
+          <dt>{stat.label}</dt>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>
+
+<style>
+  .x-about {
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
+    gap: 32px;
+    width: min(1280px, 100%);
+    margin: 0 auto;
+    padding: 140px 24px 160px;
+    background: var(--x-bg);
+  }
+
+  .x-about-eyebrow {
+    margin: 6px 0 0;
+    color: var(--x-ink);
+    font-family: var(--x-font-mono);
+    font-size: 12px;
+    letter-spacing: .14em;
+    line-height: 1;
+  }
+
+  .x-about-bio {
+    max-width: 640px;
+    margin: 0;
+    color: var(--x-ink);
+    font-family: var(--x-font-head);
+    font-size: clamp(20px, 2vw, 26px);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.45;
+  }
+
+  .x-about-stats {
+    display: flex;
+    gap: clamp(40px, 8vw, 110px);
+    margin: 96px 0 0;
+  }
+
+  .x-about-stat dd {
+    margin: 0;
+    color: var(--x-ink);
+    font-family: var(--x-font-head);
+    font-size: clamp(48px, 5vw, 72px);
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  .x-about-stat sup {
+    font-size: .38em;
+    vertical-align: super;
+  }
+
+  .x-about-stat dt {
+    margin-top: 16px;
+    color: var(--x-body);
+    font-family: var(--x-font-mono);
+    font-size: 12px;
+    letter-spacing: .12em;
+    line-height: 1.3;
+  }
+
+  @media (max-width: 860px) {
+    .x-about {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      padding: 72px 16px 88px;
+    }
+
+    .x-about-stats {
+      flex-wrap: wrap;
+      gap: 36px;
+      margin-top: 56px;
+    }
+  }
+</style>

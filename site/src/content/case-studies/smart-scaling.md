@@ -12,6 +12,10 @@ methods:
   - Survey Design
   - Quantitative Modeling
   - Feature Prioritization
+researchApproach: Quantitative
+methodologyTags:
+  - MaxDiff
+  - Survey Design
 role: Lead UX Researcher
 sample: n=170 active web users with recent CSV-upload behavior
 team: Director of Product, Account Management, Engineering, UX
