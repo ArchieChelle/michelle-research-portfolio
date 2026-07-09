@@ -167,7 +167,7 @@ I would also be precise about what the metric can bear. These are single-item us
 
 Finally, I would separate the next research wave into two tracks: retention validation and price validation. Broader recruitment, new-audience intercepts, and utilization triangulation can test whether the perception patterns hold and why users leave. A price-based conjoint survey is the recommended next study to test what users will actually pay for each bundle. Both matter, but they answer different questions.
 
-[^relatives]: "Relative" here recodes parents/guardians (30), grandparents (31), and other specified relatives (5) into a single role - the majority of SE Play's represented users are relatives of the athlete rather than athletes or general fans.
+[^relatives]: "Relative" recodes parents/guardians (30), grandparents (31), and other specified relatives (5) into a single role. Relatives made up 88% of *respondents*, but that reflects who answered the survey, not a representative draw - it does not confirm that relatives are the majority of SE Play's actual user base. Which role truly accounts for most users needs additional research to confirm or deny.
 
 ---
 
