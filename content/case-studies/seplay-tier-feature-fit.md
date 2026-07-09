@@ -7,7 +7,7 @@ industry: Sports Technology
 client: NBCUniversal - SportsEngine Play
 timeline: 13 weeks
 hero_image: ../../assets/case-study-heroes/seplay-tier-feature-fit.jpg
-last_updated: 2026-04-28
+last_updated: 2026-07-09
 ---
 
 # Evaluating Tier-Feature Fit to Inform SE Play Pricing and Retention Strategy
@@ -43,7 +43,7 @@ I treated the study as a tier-feature fit analysis first. That boundary mattered
 
 ## Approach
 
-I used an evaluative survey to quantify perceived feature usefulness across subscription tiers and give the pricing team a more disciplined view of tier value. The deck labels parts of the work as MaxDiff, but the tracker flags the visible instrument as usefulness ratings, so the method is documented conservatively here as a feature usefulness survey until the original instrument confirms otherwise.
+I ran a feature usefulness survey to quantify how valuable users found each SE Play feature within the subscription context, giving the pricing team a more disciplined view of tier value. The study measured perceived value, not trade-offs against price - an intentional scope that kept the work focused on tier composition rather than pricing sensitivity.
 
 - **Feature usefulness survey** - chosen to measure which SE Play features users perceived as most valuable within the subscription context. This supported tier-fit decisions without overstating the evidence as true pricing sensitivity.
 - **Tier-fit analysis** - chosen to connect feature value back to packaging decisions. The goal was not just to rank features, but to identify whether high-value features were sitting in the right tier.
@@ -60,7 +60,7 @@ I used an evaluative survey to quantify perceived feature usefulness across subs
 >
 > **Recruitment:** In-product Qualtrics intercept.
 >
-> **Method:** Feature usefulness survey. [TO FILL: confirm whether MaxDiff was actually used; deck labels the analysis as MaxDiff, while tracker flags the shown instrument as usefulness ratings.]
+> **Method:** Feature usefulness survey. [TO FILL: item wording, rating scale and anchors, and scoring rule (top-box or mean-score).]
 >
 > **Metric:** Feature Value Score. [TO FILL: formula, scoring rule, scale anchors, top-box or mean-score logic.]
 >
@@ -115,7 +115,7 @@ The continuous research plan becomes stronger when it reads as an evidence ladde
 | Churn Survey | Why do users cancel or downgrade? | Cancellation survey | Churn-driver taxonomy |
 | Interviews | Why are specific tier features useful or not useful? | User interviews | Context behind ratings |
 | Cohort Analysis | What do recently churned users actually do? | Behavioral cohort analysis | Observed retention patterns |
-| WTP | What will users pay for each bundle? | WTP or conjoint study | Pricing sensitivity model |
+| Price Sensitivity | What will users pay for each bundle? | Price-based conjoint survey | Pricing sensitivity model |
 
 This sequence keeps the pricing claim honest. It lets the team move from perceived value to behavior and then to price sensitivity without collapsing those signals into one metric.
 
@@ -124,7 +124,7 @@ This sequence keeps the pricing claim honest. It lets the team move from perceiv
 - **Recommendation:** Shifted the pricing conversation from broad tier strategy to specific feature-tier fit, directly tied to Finding 1.
 - **Tier decision input:** Identified All-Access features that should carry the premium value story, directly tied to Finding 2.
 - **Risk framing:** Recast downgrade language as a follow-up churn hypothesis, directly tied to Finding 3.
-- **Research roadmap:** Sequenced the next studies from usefulness measurement to churn behavior and WTP validation, directly tied to Finding 4.
+- **Research roadmap:** Sequenced the next studies from usefulness measurement to churn behavior and a price-based conjoint survey for pricing validation, directly tied to Finding 4.
 - **Stakeholder decision:** [TO FILL: final recommendation adopted by Sales Director / Price Valuation Team and resulting pricing, bundle, or roadmap decision.]
 
 ## Reflection
@@ -135,7 +135,7 @@ The sampling limitation also deserves more specificity. The deck shows segmentat
 
 I would also add a reliability check before treating Feature Value Score as stable. If the metric combines multiple survey items into a feature-value or tier-perception scale, the analysis should report Cronbach's alpha [TO FILL: alpha value and scale/item set]. That would make the metric easier to defend with senior stakeholders and clearer for future researchers to reuse.
 
-Finally, I would separate the next research wave into two tracks: retention validation and price validation. Churn surveys, interviews, and cohort analysis can test why users leave or downgrade. WTP or conjoint can test what users will pay. Both matter, but they answer different questions.
+Finally, I would separate the next research wave into two tracks: retention validation and price validation. Churn surveys, interviews, and cohort analysis can test why users leave or downgrade. A price-based conjoint survey is the recommended next study to test what users will actually pay for each bundle. Both matter, but they answer different questions.
 
 ---
 
@@ -153,6 +153,6 @@ Finally, I would separate the next research wave into two tracks: retention vali
 - Outcome block quote: Newsreader italic, indented, Black Coffee `#3A2D34`.
 - Evidence-boundary table: render as a compact data table with Jacarta `#3F2A52` header text and Parchment `#EEE9DF` background.
 - Tier-fit gap table: render as a large readable table, not a dense screenshot; use Ember `#A35139` to highlight recommendation cells.
-- Evidence ladder: render as a horizontal stepped process from Feature Value -> Churn Survey -> Interviews -> Cohort Analysis -> WTP.
+- Evidence ladder: render as a horizontal stepped process from Feature Value -> Churn Survey -> Interviews -> Cohort Analysis -> Price Sensitivity (price-based conjoint).
 - Study design specs: callout box with Parchment `#EEE9DF` background, Jacarta `#3F2A52` border, Black Coffee `#3A2D34` body text, and IBM Plex Sans Mono for placeholder/spec values.
 - Pull quote candidate: "This study informs pricing strategy by diagnosing tier fit, not by measuring willingness to pay."
