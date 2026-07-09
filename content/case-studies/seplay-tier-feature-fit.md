@@ -26,7 +26,7 @@ last_updated: 2026-07-09
 | **Timeline** | ~3 months: 1 month intake, stakeholder alignment, and survey build/QA · 2 months fielding · 2 days analysis |
 | **Study design** | Per-feature usefulness ratings (Not Useful → Extremely Useful) for 11 features across the Free, Premier, and All-Access tiers |
 | **Team** | Sales Director; Price Valuation Team; Product; Research |
-| **Outcome** | Recommended repackaging Premier and All-Access, where perceived value was weakest; stakeholder decision details [TO FILL] |
+| **Outcome** | Recommended repackaging Premier and All-Access, where perceived value was weakest. Stakeholders approved two follow-up studies: a churn survey and a price-based conjoint survey. |
 
 ---
 
@@ -143,11 +143,11 @@ The survey answered "what do users say they value." It could not answer "what wi
 |---|---|---|---|
 | Feature Value | Which features do users find useful? | Feature usefulness survey | Tier-fit hypotheses |
 | Broader recruitment | Do the patterns hold at scale? | Expanded survey (~250 target) | Statistically stronger read |
-| New audiences | How do non-visiting subscribers and prospects perceive value? | Targeted intercepts | Retention & acquisition signals |
+| Churn drivers | Why do subscribers cancel? | Churn / cancellation survey | Retention-driver taxonomy |
 | Behavioral triangulation | What do users actually do? | Utilization + survey cross-analysis | Validated insight |
 | Price Sensitivity | What will users pay for each bundle? | Price-based conjoint survey | Pricing sensitivity model |
 
-A price-based conjoint survey is the recommended next study to test what users will actually pay for revised bundles - the pricing question this survey was intentionally not built to answer.
+The team prioritized two of these as immediate follow-ups: a churn survey to learn why subscribers cancel, and a price-based conjoint survey to test what users will actually pay for revised bundles - the pricing question this survey was intentionally not built to answer.
 
 ## Impact
 
@@ -155,7 +155,7 @@ A price-based conjoint survey is the recommended next study to test what users w
 - **Feature-level call:** Flagged Training Videos from World Class Athletes as unlikely to drive subscriptions, and identified the low-value feature overlap between Premier and All-Access as a rebundling opportunity - directly tied to Finding 4.
 - **Upsell strategy:** Surfaced the Free → Premier → All-Access asymmetry, focusing upsell effort where perceived value actually supports it - directly tied to Finding 4.
 - **Research roadmap:** Sequenced the next studies from broader recruitment and behavioral triangulation to a price-based conjoint survey for pricing validation - directly tied to Finding 5.
-- **Stakeholder decision:** [TO FILL: final recommendation adopted by Sales Director / Price Valuation Team and resulting pricing, bundle, or roadmap decision.]
+- **Stakeholder decision:** The Sales Director and Price Valuation Team approved two follow-up studies on the strength of these findings: a SE Play churn survey to learn why subscribers cancel, and a price-based conjoint survey to test willingness to pay for revised bundles.
 
 ## Reflection
 
@@ -185,7 +185,7 @@ Finally, I would separate the next research wave into two tracks: retention vali
 - Outcome block quote: Newsreader italic, indented, Black Coffee `#3A2D34`.
 - Usefulness tables (Findings 1-2): render as compact data tables; use Ember `#A35139` to highlight the top "Useful" value in each and a muted tone for the "Not Useful" column.
 - All-Access ranking table (Finding 3): highlight the "Yes" (exclusive) rows in Ember `#A35139` to make the inverted-fit point visible at a glance.
-- Evidence ladder (Finding 5): render as a horizontal stepped process from Feature Value -> Broader Recruitment -> New Audiences -> Behavioral Triangulation -> Price Sensitivity (price-based conjoint).
+- Evidence ladder (Finding 5): render as a horizontal stepped process from Feature Value -> Broader Recruitment -> Churn Drivers -> Behavioral Triangulation -> Price Sensitivity (price-based conjoint).
 - Study design specs: callout box with Parchment `#EEE9DF` background, Jacarta `#3F2A52` border, Black Coffee `#3A2D34` body text, and IBM Plex Sans Mono for spec values.
 - Relatives footnote: render small, Black Coffee `#3A2D34` at 70% opacity.
 - Pull quote candidates: "The tier charges for what users value least." · "This study informs pricing strategy by diagnosing tier fit, not by measuring willingness to pay."
