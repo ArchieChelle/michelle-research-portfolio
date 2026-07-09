@@ -113,7 +113,7 @@ Asymmetry balanced by consistent spacing.
 | Card | Title | Tag | Result |
 |---|---|---|---|
 | 1 | Smart Scaling: MaxDiff Guiding Our API Strategy for ROI | Strategic Research · Survey · Feature Prioritization | Quantified feature value to guide API investment decisions |
-| 2 | Optimizing SEPlay's Pricing Strategy | Evaluative Research · Survey · Feature Prioritization | Tier recommendations adopted by executives to inform pricing strategy |
+| 2 | Evaluating Tier-Feature Fit to Inform SE Play Pricing and Retention Strategy | Evaluative Research · Feature Usefulness Survey · Tier-Fit Analysis | Found the premium tiers' exclusive features were valued least; recommended repackaging over repricing, and stakeholders funded churn + conjoint follow-ups |
 | 3 | Tax Intel Pro — AI-Powered Document System | Sandbox Project · AI · Document Processing | End-to-end intelligent document processing pipeline in progress |
 
 **Each card includes:** Thumbnail · Category tag · Title · 1-line result · Arrow link  

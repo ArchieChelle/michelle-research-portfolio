@@ -5,14 +5,14 @@ status: draft
 methods: Evaluative Research, Feature Usefulness Survey, Tier-Fit Analysis, Survey Design
 industry: Sports Technology
 client: NBCUniversal - SportsEngine Play
-timeline: 13 weeks
+timeline: ~3 months
 hero_image: ../../assets/case-study-heroes/seplay-tier-feature-fit.jpg
-last_updated: 2026-04-28
+last_updated: 2026-07-09
 ---
 
 # Evaluating Tier-Feature Fit to Inform SE Play Pricing and Retention Strategy
 
-> **Outcome:** Reframed SE Play pricing strategy around measured tier-feature fit, giving the pricing team a clearer evidence base for retention-focused packaging decisions.
+> **Outcome:** Reframed SE Play pricing strategy around measured tier-feature fit, showing that the premium tiers' exclusive features were the ones users valued least - and giving the pricing team an evidence base for repackaging rather than repricing.
 
 ---
 
@@ -22,10 +22,11 @@ last_updated: 2026-04-28
 |---|---|
 | **Role** | UX Researcher |
 | **Methods** | Feature usefulness survey; tier-fit analysis; Qualtrics data visualization; follow-up research planning |
-| **Sample** | n=250 SE Play users recruited through an in-product Qualtrics intercept; exact eligibility criteria and segment counts [TO FILL] |
-| **Study design** | Evaluative survey measuring perceived feature usefulness across subscription tiers; scoring logic and reliability details [TO FILL] |
+| **Sample** | n=75 SE Play subscribers via in-product Qualtrics intercept (Relatives 66 · Fans 6 · Athletes 3). Analysis focused on Relatives (88% of the sample). Below the threshold for statistical significance; increasing recruitment toward a ~250 target was flagged as follow-up. |
+| **Timeline** | ~3 months: 1 month intake, stakeholder alignment, and survey build/QA · 2 months fielding · 2 days analysis |
+| **Study design** | Per-feature usefulness ratings (Not Useful → Extremely Useful) for 11 features across the Free, Premier, and All-Access tiers |
 | **Team** | Sales Director; Price Valuation Team; Product; Research |
-| **Outcome** | Tier recommendations informed pricing and retention strategy; stakeholder decision details [TO FILL] |
+| **Outcome** | Recommended repackaging Premier and All-Access, where perceived value was weakest. Stakeholders approved two follow-up studies: a churn survey and a price-based conjoint survey. |
 
 ---
 
@@ -43,105 +44,136 @@ I treated the study as a tier-feature fit analysis first. That boundary mattered
 
 ## Approach
 
-I used an evaluative survey to quantify perceived feature usefulness across subscription tiers and give the pricing team a more disciplined view of tier value. The deck labels parts of the work as MaxDiff, but the tracker flags the visible instrument as usefulness ratings, so the method is documented conservatively here as a feature usefulness survey until the original instrument confirms otherwise.
+I ran a feature usefulness survey to quantify how valuable users found each SE Play feature within the subscription context, giving the pricing team a more disciplined view of tier value. The study measured perceived value, not trade-offs against price - an intentional scope that kept the work focused on tier composition rather than pricing sensitivity.
 
-- **Feature usefulness survey** - chosen to measure which SE Play features users perceived as most valuable within the subscription context. This supported tier-fit decisions without overstating the evidence as true pricing sensitivity.
+- **Feature usefulness survey** - respondents rated each of 11 features on a Not Useful → Extremely Useful scale, asked within the context of each subscription tier. This measured which features users perceived as valuable without overstating the evidence as true pricing sensitivity.
 - **Tier-fit analysis** - chosen to connect feature value back to packaging decisions. The goal was not just to rank features, but to identify whether high-value features were sitting in the right tier.
-- **Segmentation cuts** - planned around relation to the athlete, subscription tier, subscription length, and sport. These cuts were important because tier value likely differs by household role and use context, but the exact segment counts are not visible in the deck.
-- **Continuous research roadmap** - used to sequence the next evidence layers: churn survey, user interviews, cohort analysis, and willingness-to-pay validation.
+- **Segmentation cuts** - relation to the athlete, subscription tier, subscription length, and sport. Because relatives responded at a far higher rate than athletes or fans, the analysis concentrated on that segment.
+- **Continuous research roadmap** - used to sequence the next evidence layers: increased recruitment, new audience targeting, behavioral triangulation, and price-sensitivity validation.
 
 > **Study design specs**
 >
-> **Research question:** Which SE Play features do users value most, and how well do current subscription tiers align with those priorities?
+> **Research question:** Are subscribers perceiving value in the features offered in each subscription package?
 >
-> **Population:** SE Play users and subscribers. Eligibility criteria [TO FILL: exact screener requirements].
+> **Population:** SE Play subscribers.
 >
-> **Sample:** n=250. Segment counts by relation to athlete, subscription tier, subscription length, and sport [TO FILL].
+> **Sample:** n=75 (Relatives 66, Fans 6, Athletes 3). Analysis focused on Relatives (88% of the sample). Below the threshold for statistical significance; recruitment should increase toward a ~250 target in a follow-up wave before treating segment-level results as conclusive.
 >
 > **Recruitment:** In-product Qualtrics intercept.
 >
-> **Method:** Feature usefulness survey. [TO FILL: confirm whether MaxDiff was actually used; deck labels the analysis as MaxDiff, while tracker flags the shown instrument as usefulness ratings.]
+> **Method:** Feature usefulness survey. Per-feature usefulness rating (Not Useful / Slightly / Somewhat / Moderately / Very / Extremely Useful / Can't Decide) across 11 features, evaluated for each subscription tier.
 >
-> **Metric:** Feature Value Score. [TO FILL: formula, scoring rule, scale anchors, top-box or mean-score logic.]
+> **Metric:** Feature Value Score - the share of respondents rating a feature "Useful" (top-box), read against the share rating it "Not Useful," per feature per tier.
 >
-> **Reliability:** Cronbach's alpha [TO FILL: alpha value and scale/item set] for any multi-item feature-value or tier-perception scale.
+> **Reliability:** Single-item usefulness ratings on a small sample (n=75). Results are directional and below the threshold for statistical significance; increasing recruitment is the primary rigor step before scaling any claim.
 >
-> **Evidence boundary:** This study measured perceived feature usefulness and tier fit. It did not directly measure willingness to pay, prove churn causality, or estimate CLTV impact.
+> **Evidence boundary:** This study measured perceived feature usefulness and tier fit, concentrated among Relatives. It did not directly measure willingness to pay, prove churn causality, or estimate CLTV impact.
 
 ## Findings
 
-### Finding 1: Tier value was a fit problem before it was a pricing problem
+Respondents skewed heavily toward relatives of athletes - grandparents, parents, and guardians made up **66 of 75 respondents (88%)**.[^relatives] Monthly was the most preferred subscription length (29 of 47 who answered), and football and volleyball were the most-followed sports. Because relatives dominated the sample, the findings below describe that segment.
 
-The most important insight was not that some features scored higher than others. It was that pricing strategy needed a clearer bridge between what users valued and where those features appeared in the subscription model.
+### Finding 1: The Free tier already fits
 
-That distinction changed the decision frame. Instead of treating price as the first lever, the study positioned tier composition as the first diagnostic: if high-value features are buried, duplicated, or misaligned, a price change may only amplify an existing fit problem.
+Current free-tier features were well-perceived. The essentials - watching on any device and live streaming - led the tier, and roughly 80% of respondents found the free offering useful overall.
 
-| Evidence boundary | What the study supports | What still needs validation |
+| Free-tier feature | Useful | Not Useful |
 |---|---|---|
-| Feature usefulness | Which features users report as valuable | Whether users will pay more for those features |
-| Tier fit | Whether perceived value aligns with current packaging | Whether tier changes reduce churn |
-| Retention risk | Hypotheses about downgrade or cancellation pressure | Observed churn behavior and cancellation reasons |
-| Pricing strategy | Inputs for packaging recommendations | WTP, conjoint, or price-sensitivity modeling |
+| Watch on web or phone | 55% | 14% |
+| Live stream events & games | 48% | 14% |
+| Access to automated highlights | 46% | 9% |
+| Upload highlights | 41% | 23% |
 
-### Finding 2: All-access value appeared concentrated in content access and flexible viewing
+The takeaway: the free tier was doing its job. The fit problem was higher up the ladder.
 
-For All-Access subscribers, the deck identifies high-value features tied to access, replay, and viewing flexibility: live streams, premium on-demand events, multi-device access, training videos, video downloads, and automated highlights. These features point to the core value proposition of the tier: reliable access to content after the moment of play, not only during the live event.
+### Finding 2: The premium tiers under-deliver on perceived value
 
-The implication is a packaging decision. If All-Access is meant to command a premium, the tier needs to make its content-access advantage unmistakable.
+Among Premier subscribers, **Ad-Free Streaming was the only feature where "Useful" matched or beat "Not Useful"** - and even it was a wash at 25% / 25%. Every other Premier feature skewed toward "Not Useful," and Premium on-demand events was rated least useful of all.
 
-| Feature | Current tier | Perceived value | Recommendation | Evidence status |
-|---|---|---|---|---|
-| Live streams | All-Access | High | Protect as core tier value | Visible in deck |
-| Premium on-demand events | All-Access | High | Use as premium value proof | Visible in deck |
-| Multi-device access | All-Access | High | Position as household flexibility | Visible in deck |
-| Training videos | All-Access | High | Validate usage depth before emphasizing | Visible in deck |
-| Video downloads | All-Access | High | Test as retention or convenience driver | Visible in deck |
-| Automated highlights | All-Access | High | Validate appeal by sport and user role | Visible in deck |
-| [TO FILL: Premier feature] | Premier | [TO FILL] | [TO FILL] | Requires feature-score table |
+| Premier feature | Useful | Not Useful |
+|---|---|---|
+| Ad-Free Streaming | 25% | 25% |
+| Live game & event replays | 25% | 38% |
+| Watch on web or phone | 25% | 50% |
+| Live stream events & games | 13% | 38% |
+| Integrated scoreboard | 13% | 38% |
+| Upload highlights | 13% | 38% |
+| Access to automated highlights | 13% | 38% |
+| Premium on demand events | 13% | 50% |
 
-### Finding 3: Downgrade risk was a research hypothesis, not a churn conclusion
+A tier whose only convincing feature is the absence of ads is a tier with a value problem, not a price problem.
 
-The deck notes that All-Access may be less attractive to Premier players and could carry a higher likelihood of downgrading to Premier or Free. The tracker correctly reframes that as a hypothesis. The survey can suggest a tier-fit risk, but it cannot prove downgrades without churn behavior, cancellation reasons, and cohort movement.
+### Finding 3: All-Access's exclusive features are the ones users value least
 
-The stronger conclusion is narrower and more useful: All-Access needs follow-up validation among users who could substitute Premier or Free. A family plan also deserves exploration because bundled household access may better match how families share sports content.
+Ranked by usefulness, the top of the All-Access tier is made up of the essential streaming features shared across every tier - not the exclusives that are supposed to justify the upgrade.
 
-### Finding 4: The next research sequence needed to build from attitude to behavior
+| Rank | All-Access feature | Exclusive to All-Access? |
+|---|---|---|
+| 1 | Live game & event replays | No |
+| 2 | Live stream events & games | No |
+| 3 | Watch on web or phone | No |
+| 4 | Video downloads | Yes |
+| 5 | On-demand video library | Yes |
+| 6 | Ad-Free Streaming | No |
+| 7 | Premium on demand events | Yes |
+| 8 | Integrated scoreboard | No |
+| 9 | Upload highlights | No |
+| 10 | Access to automated highlights | No |
+| 11 | Training Videos from World Class Athletes | Yes |
 
-The continuous research plan becomes stronger when it reads as an evidence ladder. Each step answers a different question and reduces a different risk.
+**None of the All-Access-exclusive features cracked the top three.** The differentiators meant to command a premium - training videos (dead last), premium on-demand events, the on-demand library - are exactly the features users rated lowest. The fit is inverted: the tier charges for what users value least.
+
+*\* Ranking follows the canonical 2023 research report. The September 2023 insights slide ordered a few features differently - most notably it placed video downloads near the bottom rather than 4th - so treat the exact ordering of the middle of the pack as directional.*
+
+### Finding 4: Upsell only works in one direction
+
+The usefulness data points to an asymmetry in how subscribers could move between tiers:
+
+- **Free → Premier is plausible.** Premier's perceived value, thin as it is, still reads as an upgrade to free users.
+- **Premier → All-Access is unlikely.** Premier subscribers rated All-Access's exclusive features as *not useful*, so the upsell has little to stand on as currently packaged.
+- **The overlap is an opportunity.** Integrated scoreboard, upload highlights, and automated highlights were similarly (low) in value to both Premier and All-Access users - features that could be shifted or rebundled to give each tier a clearer reason to exist.
+
+One feature stood out at the bottom across the board: **Training Videos from World Class Athletes was the single least useful feature in the study** - a candidate to cut or rethink, not to market as a premium draw.
+
+### Finding 5: The next research needed to move from perception to behavior and price
+
+The survey answered "what do users say they value." It could not answer "what will they pay" or "why do they leave." The recommended sequence:
 
 | Evidence step | Primary question | Method | Output |
 |---|---|---|---|
-| Feature Value | Which features do users say are useful? | Feature usefulness survey | Tier-fit hypotheses |
-| Churn Survey | Why do users cancel or downgrade? | Cancellation survey | Churn-driver taxonomy |
-| Interviews | Why are specific tier features useful or not useful? | User interviews | Context behind ratings |
-| Cohort Analysis | What do recently churned users actually do? | Behavioral cohort analysis | Observed retention patterns |
-| WTP | What will users pay for each bundle? | WTP or conjoint study | Pricing sensitivity model |
+| Feature Value | Which features do users find useful? | Feature usefulness survey | Tier-fit hypotheses |
+| Broader recruitment | Do the patterns hold at scale? | Expanded survey (~250 target) | Statistically stronger read |
+| Churn drivers | Why do subscribers cancel? | Churn / cancellation survey | Retention-driver taxonomy |
+| Behavioral triangulation | What do users actually do? | Utilization + survey cross-analysis | Validated insight |
+| Price Sensitivity | What will users pay for each bundle? | Price-based conjoint survey | Pricing sensitivity model |
 
-This sequence keeps the pricing claim honest. It lets the team move from perceived value to behavior and then to price sensitivity without collapsing those signals into one metric.
+The team prioritized two of these as immediate follow-ups: a churn survey to learn why subscribers cancel, and a price-based conjoint survey to test what users will actually pay for revised bundles - the pricing question this survey was intentionally not built to answer.
 
 ## Impact
 
-- **Recommendation:** Shifted the pricing conversation from broad tier strategy to specific feature-tier fit, directly tied to Finding 1.
-- **Tier decision input:** Identified All-Access features that should carry the premium value story, directly tied to Finding 2.
-- **Risk framing:** Recast downgrade language as a follow-up churn hypothesis, directly tied to Finding 3.
-- **Research roadmap:** Sequenced the next studies from usefulness measurement to churn behavior and WTP validation, directly tied to Finding 4.
-- **Stakeholder decision:** [TO FILL: final recommendation adopted by Sales Director / Price Valuation Team and resulting pricing, bundle, or roadmap decision.]
+- **Repackaging direction:** Recommended reworking Premier and All-Access, where perceived value was weakest, rather than starting from price - directly tied to Findings 2 and 3.
+- **Feature-level call:** Flagged Training Videos from World Class Athletes as unlikely to drive subscriptions, and identified the low-value feature overlap between Premier and All-Access as a rebundling opportunity - directly tied to Finding 4.
+- **Upsell strategy:** Surfaced the Free → Premier → All-Access asymmetry, focusing upsell effort where perceived value actually supports it - directly tied to Finding 4.
+- **Research roadmap:** Sequenced the next studies from broader recruitment and behavioral triangulation to a price-based conjoint survey for pricing validation - directly tied to Finding 5.
+- **Stakeholder decision:** The Sales Director and Price Valuation Team approved two follow-up studies on the strength of these findings: a SE Play churn survey to learn why subscribers cancel, and a price-based conjoint survey to test willingness to pay for revised bundles.
 
 ## Reflection
 
-The most important trade-off in this study was precision. The work was valuable because it gave the pricing team a clearer view of perceived feature value, but it would have been easy to overstate the result as a pricing model. I would keep the evidence boundary visible from the first slide: this study informs pricing strategy by diagnosing tier fit, not by measuring willingness to pay.
+The most important discipline in this study was scope. A usefulness survey diagnoses tier fit; it does not measure willingness to pay. I kept that boundary visible: this study informs pricing strategy by diagnosing tier fit, not by measuring willingness to pay. The finding that mattered - that the premium tiers' exclusive features were the least valued - is a packaging insight, and I framed the recommendation as repackaging rather than repricing.
 
-The sampling limitation also deserves more specificity. The deck shows segmentation by relation to athlete, subscription tier, subscription length, and sport, but not the segment counts. Without those counts, I would avoid claiming that the results generalize evenly across families, athletes, long-tenured subscribers, and newer users. A stronger next version would report the distribution by segment and flag any overrepresented group before making tier-level recommendations.
+The clearest limitation was sample size and composition. At n=75, segmented across relation to athlete, subscription tier, subscription length, and sport, the study fell below the threshold for statistical significance, and relatives made up 88% of respondents. The findings describe relatives well and athletes and fans barely at all. I flagged increasing recruitment toward a ~250 target before treating any segment-level result as conclusive, and I would report the full segment distribution before generalizing to the platform.
 
-I would also add a reliability check before treating Feature Value Score as stable. If the metric combines multiple survey items into a feature-value or tier-perception scale, the analysis should report Cronbach's alpha [TO FILL: alpha value and scale/item set]. That would make the metric easier to defend with senior stakeholders and clearer for future researchers to reuse.
+I would also be precise about what the metric can bear. These are single-item usefulness ratings on a small sample, so the results are directional, not definitive - reliability comes from scaling the sample, not from a coefficient on this one. Where the 2023 report and the September 2023 insights slide disagreed on exact rankings, I treated the fuller report as canonical and flagged the difference rather than smoothing it over.
 
-Finally, I would separate the next research wave into two tracks: retention validation and price validation. Churn surveys, interviews, and cohort analysis can test why users leave or downgrade. WTP or conjoint can test what users will pay. Both matter, but they answer different questions.
+Finally, I would separate the next research wave into two tracks: retention validation and price validation. Broader recruitment, new-audience intercepts, and utilization triangulation can test whether the perception patterns hold and why users leave. A price-based conjoint survey is the recommended next study to test what users will actually pay for each bundle. Both matter, but they answer different questions.
+
+[^relatives]: "Relative" recodes parents/guardians (30), grandparents (31), and other specified relatives (5) into a single role. Relatives made up 88% of *respondents*, but that reflects who answered the survey, not a representative draw - it does not confirm that relatives are the majority of SE Play's actual user base. Which role truly accounts for most users needs additional research to confirm or deny.
 
 ---
 
 ## Footer
 
-**Project completed:** [TO FILL: year]
+**Project completed:** 2023
 **Want to discuss this work?** [Let's connect ->](#contact)
 
 ---
@@ -151,8 +183,9 @@ Finally, I would separate the next research wave into two tracks: retention vali
 - Hero image: place `seplay-tier-feature-fit.jpg` from `/assets/case-study-heroes/` in the hero slot.
 - Section dividers: use a thin Wisteria `#BEAEDB` 1px rule between major sections.
 - Outcome block quote: Newsreader italic, indented, Black Coffee `#3A2D34`.
-- Evidence-boundary table: render as a compact data table with Jacarta `#3F2A52` header text and Parchment `#EEE9DF` background.
-- Tier-fit gap table: render as a large readable table, not a dense screenshot; use Ember `#A35139` to highlight recommendation cells.
-- Evidence ladder: render as a horizontal stepped process from Feature Value -> Churn Survey -> Interviews -> Cohort Analysis -> WTP.
-- Study design specs: callout box with Parchment `#EEE9DF` background, Jacarta `#3F2A52` border, Black Coffee `#3A2D34` body text, and IBM Plex Sans Mono for placeholder/spec values.
-- Pull quote candidate: "This study informs pricing strategy by diagnosing tier fit, not by measuring willingness to pay."
+- Usefulness tables (Findings 1-2): render as compact data tables; use Ember `#A35139` to highlight the top "Useful" value in each and a muted tone for the "Not Useful" column.
+- All-Access ranking table (Finding 3): highlight the "Yes" (exclusive) rows in Ember `#A35139` to make the inverted-fit point visible at a glance.
+- Evidence ladder (Finding 5): render as a horizontal stepped process from Feature Value -> Broader Recruitment -> Churn Drivers -> Behavioral Triangulation -> Price Sensitivity (price-based conjoint).
+- Study design specs: callout box with Parchment `#EEE9DF` background, Jacarta `#3F2A52` border, Black Coffee `#3A2D34` body text, and IBM Plex Sans Mono for spec values.
+- Relatives footnote: render small, Black Coffee `#3A2D34` at 70% opacity.
+- Pull quote candidates: "The tier charges for what users value least." · "This study informs pricing strategy by diagnosing tier fit, not by measuring willingness to pay."
