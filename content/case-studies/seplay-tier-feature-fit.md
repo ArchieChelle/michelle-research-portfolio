@@ -22,7 +22,7 @@ last_updated: 2026-07-09
 |---|---|
 | **Role** | UX Researcher |
 | **Methods** | Feature usefulness survey; tier-fit analysis; Qualtrics data visualization; follow-up research planning |
-| **Sample** | n=250 SE Play users recruited through an in-product Qualtrics intercept; exact eligibility criteria and segment counts [TO FILL] |
+| **Sample** | n=75 SE Play subscribers recruited through an in-product Qualtrics intercept. Below the threshold for statistical significance - increasing recruitment was flagged as a follow-up. Segment counts [TO FILL]. |
 | **Study design** | Evaluative survey measuring perceived feature usefulness across subscription tiers; scoring logic and reliability details [TO FILL] |
 | **Team** | Sales Director; Price Valuation Team; Product; Research |
 | **Outcome** | Tier recommendations informed pricing and retention strategy; stakeholder decision details [TO FILL] |
@@ -54,9 +54,9 @@ I ran a feature usefulness survey to quantify how valuable users found each SE P
 >
 > **Research question:** Which SE Play features do users value most, and how well do current subscription tiers align with those priorities?
 >
-> **Population:** SE Play users and subscribers. Eligibility criteria [TO FILL: exact screener requirements].
+> **Population:** SE Play subscribers.
 >
-> **Sample:** n=250. Segment counts by relation to athlete, subscription tier, subscription length, and sport [TO FILL].
+> **Sample:** n=75. Below the threshold for statistical significance; recruitment should increase in a follow-up wave before treating segment-level results as conclusive. Segment counts by relation to athlete, subscription tier, subscription length, and sport [TO FILL].
 >
 > **Recruitment:** In-product Qualtrics intercept.
 >
@@ -131,7 +131,7 @@ This sequence keeps the pricing claim honest. It lets the team move from perceiv
 
 The most important trade-off in this study was precision. The work was valuable because it gave the pricing team a clearer view of perceived feature value, but it would have been easy to overstate the result as a pricing model. I would keep the evidence boundary visible from the first slide: this study informs pricing strategy by diagnosing tier fit, not by measuring willingness to pay.
 
-The sampling limitation also deserves more specificity. The deck shows segmentation by relation to athlete, subscription tier, subscription length, and sport, but not the segment counts. Without those counts, I would avoid claiming that the results generalize evenly across families, athletes, long-tenured subscribers, and newer users. A stronger next version would report the distribution by segment and flag any overrepresented group before making tier-level recommendations.
+The clearest limitation was sample size. At n=75 - segmented across relation to athlete, subscription tier, subscription length, and sport - the study fell below the threshold for statistical significance, and I flagged increasing recruitment before treating any segment-level result as conclusive. Segment counts are not yet documented [TO FILL], so I would avoid claiming the results generalize evenly across families, athletes, long-tenured subscribers, and newer users. A stronger next wave would raise the sample, report the distribution by segment, and flag any overrepresented group before making tier-level recommendations.
 
 I would also add a reliability check before treating Feature Value Score as stable. If the metric combines multiple survey items into a feature-value or tier-perception scale, the analysis should report Cronbach's alpha [TO FILL: alpha value and scale/item set]. That would make the metric easier to defend with senior stakeholders and clearer for future researchers to reuse.
 
